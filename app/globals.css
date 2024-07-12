@@ -1,33 +1,88 @@
+@import "@/styles/reset.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  @font-face {
+    src: url("../public/fonts/AmazonEmber_W_LtIt.woff");
+    font-family: "AmazonEmber";
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+:root {
 }
-
+body {
+  /* background-color: #fffdf9; */
+  color: black;
+  overflow-x: hidden;
+}
+html {
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2s);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
+.header-link:hover:after {
+  position: absolute;
+  content: "";
+  top: calc(100% + 2px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #292929;
+}
+.header-link.active:after {
+  position: absolute;
+  content: "";
+  top: calc(100% + 2px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #292929;
+}
+.featured-post {
+  position: relative;
+}
+.featured-post::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(100% + 20px);
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.featured-post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: calc(100% + 20px);
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.custom-cursor {
+  cursor: url(/images/link.cur), auto;
 }
