@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDebounceValue, useOnClickOutside } from "usehooks-ts";
-
+import { TbHomeFilled } from "react-icons/tb";
 import React, { useEffect, useRef, useState } from "react";
 import SearchIcon from "./icons/SearchIcon";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
@@ -13,7 +13,12 @@ import { categoryData } from "@/data";
 import FacebookIcon from "./icons/FacebookIcon";
 import InstagramIcon from "./icons/InstagramIcon";
 import LinkedInIcon from "./icons/LinkedInIcon";
-
+import { DiGithubBadge } from "react-icons/di";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
+import { CiLinkedin } from "react-icons/ci";
+import { FiSearch } from "react-icons/fi";
+import { motion } from "framer-motion";
 const Navbar = () => {
   const pathname = usePathname();
   const dispatch = useAppDispatch();
@@ -22,60 +27,57 @@ const Navbar = () => {
     (state: RootState) => state.app.isShowSearchDrawer
   );
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
+
   return (
-    <nav className="z-10 w-full mx-auto  sticky top-0 bg-white shadow-md">
-      <div className="h-[80px]  lg:max-w-none xl:max-w-container-lg mx-auto flex justify-between items-center">
-        <div className="flex items-center">
+    <nav className="z-10 w-full mx-auto  sticky top-0 backdrop-blur-2xl shadow-md">
+      <div className="h-[60px] max-w-full px-[20px] mx-auto flex justify-between items-center">
+        <div className="w-[20%]">
           <Link href="/" className="text-primary text-[24px] font-extrabold">
             Neil dumpling
           </Link>
-          <ul className="ml-10 flex gap-8 items-center h-auto ">
-            <li>
-              <Link
-                href="/about"
-                className={`relative text-primary text-[15px] font-normal  header-link ${
-                  pathname === "/about" ? "  active" : ""
-                }`}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/projects?company=vtc"
-                className={`relative text-primary text-[15px] font-normal   header-link ${
-                  pathname === "/projects" ? "active" : ""
-                }`}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/what-i-learned"
-                className={`relative text-primary text-[15px] font-normal   header-link ${
-                  pathname === "/what-i-learned" ? " active" : ""
-                }`}
-              >
-                What I Learned
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/uses"
-                className={`relative  text-primary text-[15px] font-normal  header-link ${
-                  pathname === "/blog" ? "active" : ""
-                }`}
-              >
-                Uses
-              </Link>
-            </li>
-          </ul>
         </div>
-        <div className="flex items-center">
-          <button className="group" onClick={toggleDrawer}>
-            <SearchIcon className="hover:opacity-50" />
-          </button>
+        <ul className="w-[400px] flex gap-8 items-center justify-between h-auto ">
+          <li>
+            <Link
+              href="/"
+              className={`relative text-primary text-[15px] font-normal  `}
+            >
+              <TbHomeFilled
+                className={`text-[22px] ${
+                  pathname === "/" ? "text-custom-blue" : "text-black"
+                }`}
+              />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="github.com/hoanganh1511"
+              target="_blank"
+              className={`relative text-primary text-[15px] font-normal `}
+            >
+              <FiGithub className={`text-[20px]`} />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="github.com/hoanganh1511"
+              target="_blank"
+              className={`relative text-primary text-[15px] font-normal `}
+            >
+              <FaLinkedinIn className={`text-[20px]`} />
+            </Link>
+          </li>
+        </ul>
+        <div className="w-[20%]">
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+            className="group mx-auto w-[36px] h-[36px] bg-black/80 rounded-[4px] flex items-center justify-center"
+            onClick={toggleDrawer}
+          >
+            <FiSearch className="text-white text-[22px]" />
+          </motion.button>
         </div>
       </div>
       <SearchDrawer />

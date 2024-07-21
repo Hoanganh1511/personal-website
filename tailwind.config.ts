@@ -33,6 +33,8 @@ const config: Config = {
       animation: {},
       colors: {
         primary: "#292929",
+        "custom-blue": "#0037A5",
+        "custom-blue-light": "#0c5dff",
       },
       borderWidth: {
         DEFAULT: "1px",
