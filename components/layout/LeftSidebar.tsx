@@ -4,6 +4,7 @@ import { PiCoffeeFill } from "react-icons/pi";
 import { BsFillSuitcaseLgFill } from "react-icons/bs";
 import { FaPersonRays } from "react-icons/fa6";
 import { FaBellConcierge } from "react-icons/fa6";
+import { LIST_CONCEPT } from "@/data/static";
 const LeftSidebar = () => {
   return (
     <div className="sticky top-[80px] min-h-screen p-[20px]  border-r-[1px] border-black/20">

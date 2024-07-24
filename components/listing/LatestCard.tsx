@@ -4,16 +4,14 @@ import Image from "next/image";
 import urlFor from "@/libs/urlFor";
 import Link from "next/link";
 import { motion } from "framer-motion";
+const convertFormatDate = (dateInput: string) => {
+  const date = new Date(dateInput);
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+};
 const LatestCard = ({ post, id }: { post: Post; id: number }) => {
-  const indexCard = id + 1;
-  const convertFormatDate = (dateInput: string) => {
-    const date = new Date(dateInput);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  };
-
   return (
     <motion.a
       href={`/blog/${post._id}`}
@@ -28,18 +26,32 @@ const LatestCard = ({ post, id }: { post: Post; id: number }) => {
         width={300}
         height={150}
         quality={100}
-        className="w-full object-fill"
+        className="w-full h-[290px] object-cover"
       />
       <div className="p-[20px]">
         <h2 className="mt-[16px] min-h-[96px] text-[24px] font-bold  line-clamp-3">
           {post.title}
         </h2>
-        {/* <p className="pt-2 text-[14.5px] font-light line-clamp-2">
-          {post.sapo}
-        </p> */}
-        <p className="pt-4 text-[12.5px] text-black/70">
+        <div className="flex">
+          <div className="w-[46px] h-[46px] rounded-full flex justify-center items-center bg-red-400">
+            <Image
+              src="https://cdn-icons-png.flaticon.com/512/5556/5556499.png"
+              alt="avatar"
+              width={36}
+              height={36}
+              className="rounded-full "
+            />
+          </div>
+          <div className="ml-3">
+            <div className="font-bold text-[16.75px]">Tuấn Anh</div>
+            <div className="text-[13.5px] text-[#0000008c]">
+              Cập nhật gần nhất: {convertFormatDate(post._updatedAt)}
+            </div>
+          </div>
+        </div>
+        {/* <p className="pt-4 text-[14px] text-black/70">
           By {post.author.name} - Cập nhật {convertFormatDate(post._updatedAt)}
-        </p>
+        </p> */}
       </div>
     </motion.a>
   );

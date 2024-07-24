@@ -26,8 +26,18 @@ const PostCard = ({ post }: { post: Post }) => {
         <div className="mt-2 text-[12.5px] text-[#0000008c]">
           By {post.author.name} - {formatDateTime(post._createdAt)}
         </div>
-        <div className="mt-2 text-[12.5px] text-[#0000008c]">
-          Cập nhật gần nhất: {formatDateTime(post._updatedAt)}
+        <div>
+          <Image
+            src="https://cdn-icons-png.flaticon.com/512/5556/5556499.png"
+            alt="avatar"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+          <div className="font-bold text-[18px]">Tuấn Anh</div>
+          <div className="mt-2 text-[12.5px] text-[#0000008c]">
+            Cập nhật gần nhất: {formatDateTime(post._updatedAt)}
+          </div>
         </div>
       </div>
     </Link>

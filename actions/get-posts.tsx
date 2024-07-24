@@ -2,10 +2,6 @@ import { client } from "@/libs/sanity.client";
 // import { Post } from "@/types";
 import { groq } from "next-sanity";
 
-interface Query {
-  queryId?: string;
-  pageIndex?: number;
-}
 export const ITEMS_PER_PAGE = 6;
 interface IParams {
   category?: string;
