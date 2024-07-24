@@ -3,34 +3,32 @@ import Image from "next/image";
 import { Post } from "@/types";
 import urlFor from "@/libs/urlFor";
 import Link from "next/link";
+import { formatDateTime } from "@/utils/helper";
 const PostCard = ({ post }: { post: Post }) => {
-  const convertFormatDate = (dateInput: string) => {
-    const date = new Date(dateInput);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  };
   return (
-    <Link href={`/blog/${post._id}`} className="group cursor-pointer relative">
+    <Link
+      key={post._id}
+      href={`/blog/${post._id}`}
+      className="group cursor-pointer relative bg-white shadow-[0_16px_32px_0_rgba(41,41,41,.1)] rounded-[12px] overflow-hidden"
+    >
       <Image
         src={urlFor(post.mainImage).url()}
         alt=""
         width={800}
-        height={400}
-        className="w-full min-h-[168px] object-cover"
+        height={200}
+        className="w-full h-[200px] object-fill border-b"
       />
-      <h2 className="mt-4 text-[16px] font-bold group-hover:text-black/70">
-        {post.title}
-      </h2>
-      <div className="text-[13.5px] my-2 italic text-black/70">
-        {post.hashtag}
-      </div>
-      <div className="mt-2 text-[12.5px] text-[#0000008c]">
-        By {post.author.name} - {convertFormatDate(post._createdAt)}
-      </div>
-      <div className="mt-2 text-[12.5px] text-[#0000008c]">
-        Cập nhật gần nhất: {convertFormatDate(post._updatedAt)}
+      <div className="p-[20px]">
+        <h2 className="text-[20px] h-[84px] leading-[28px] mt-[16px] font-semibold group-hover:text-black/70">
+          {post.title}
+        </h2>
+
+        <div className="mt-2 text-[12.5px] text-[#0000008c]">
+          By {post.author.name} - {formatDateTime(post._createdAt)}
+        </div>
+        <div className="mt-2 text-[12.5px] text-[#0000008c]">
+          Cập nhật gần nhất: {formatDateTime(post._updatedAt)}
+        </div>
       </div>
     </Link>
   );

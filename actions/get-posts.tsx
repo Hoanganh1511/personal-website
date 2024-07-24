@@ -14,7 +14,6 @@ interface IParams {
 }
 const getAllPosts = (params: IParams) => {
   const querySanity = groq`*[_type=="post"
-  ${params && params.category?.length! > 0 ? " && $category in categories[]->tag.current" : ""}
   ${params && params.keyword?.length! > 0 ? "&& title match $keyword" : ""}
   ]{
           ...,
@@ -23,7 +22,6 @@ const getAllPosts = (params: IParams) => {
         } | order(_updatedAt ${params.sort || "asc"})`;
 
   return client.fetch(querySanity, {
-    category: params.category,
     sort: params.sort || "desc",
     keyword: params.keyword || "",
   });
