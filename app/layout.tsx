@@ -5,12 +5,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "@/redux/provider";
 import Footer from "@/components/Footer";
-
-// const amazon = localFont({
-//   src: "./fonts/AmazonEmber_W_Bd.woff",
-//   variable: "--font-amazon",
-//   display: "swap",
-// });
 const lexend = Lexend({
   subsets: ["latin"],
   variable: "--font-lexend",
@@ -50,7 +44,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <div className="mx-auto px-[15px]">{children}</div>
+          <div className="mx-auto pt-[30px]">{children}</div>
           <Footer />
         </Providers>
       </body>

@@ -65,7 +65,7 @@ const LatestSection = () => {
     });
   }, []);
   return (
-    <div className="max-w-container-lg mx-auto">
+    <div className="max-w-full mx-auto px-[15px]">
       <div className="grid grid-cols-12 gap-[20px]">
         <div className="col-span-12">
           <div className="flex items-center">
@@ -164,11 +164,7 @@ const SearchingLoading = ({ className }: { className?: string }) => {
 const ListSkeleton = () => {
   return (
     <>
-      <header className="grid grid-cols-4 gap-[42px]">
-        <Skeleton className=" h-[36px] md:h-[200px]" />
-        <Skeleton className=" h-[36px] md:h-[200px]" />
-        <Skeleton className=" h-[36px] md:h-[200px]" />
-        <Skeleton className=" h-[36px] md:h-[200px]" />
+      <header className="grid grid-cols-2 gap-[20px]">
         <Skeleton className=" h-[36px] md:h-[200px]" />
         <Skeleton className=" h-[36px] md:h-[200px]" />
         <Skeleton className=" h-[36px] md:h-[200px]" />

@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDebounceValue, useOnClickOutside } from "usehooks-ts";
-
 import React, { useEffect, useRef, useState } from "react";
 import SearchIcon from "./icons/SearchIcon";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
@@ -10,10 +9,34 @@ import appSlice from "@/app/appSlice";
 import { RootState } from "@/redux/configure-store";
 import CloseIcon from "./icons/CloseIcon";
 import { categoryData } from "@/data";
-import FacebookIcon from "./icons/FacebookIcon";
-import InstagramIcon from "./icons/InstagramIcon";
-import LinkedInIcon from "./icons/LinkedInIcon";
-
+import { TbHomeFilled } from "react-icons/tb";
+import { FaProjectDiagram } from "react-icons/fa";
+import { SiSololearn } from "react-icons/si";
+import { LuLampDesk } from "react-icons/lu";
+import { FiSearch } from "react-icons/fi";
+import { motion } from "framer-motion";
+const navs = [
+  {
+    text: "Home",
+    href: "/",
+    icon: TbHomeFilled,
+  },
+  {
+    text: "Projects",
+    href: "/projects",
+    icon: FaProjectDiagram,
+  },
+  {
+    text: "What I Learned",
+    href: "/what-i-learned",
+    icon: SiSololearn,
+  },
+  {
+    text: "Uses",
+    href: "/uses",
+    icon: LuLampDesk,
+  },
+];
 const Navbar = () => {
   const pathname = usePathname();
   const dispatch = useAppDispatch();
@@ -23,59 +46,50 @@ const Navbar = () => {
   );
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   return (
-    <nav className="z-10 w-full mx-auto  sticky top-0 bg-white shadow-md">
-      <div className="h-[80px]  lg:max-w-none xl:max-w-container-lg mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <Link href="/" className="text-primary text-[24px] font-extrabold">
-            Neil dumpling
-          </Link>
-          <ul className="ml-10 flex gap-8 items-center h-auto ">
-            <li>
-              <Link
-                href="/about"
-                className={`relative text-primary text-[15px] font-normal  header-link ${
-                  pathname === "/about" ? "  active" : ""
-                }`}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/projects?company=vtc"
-                className={`relative text-primary text-[15px] font-normal   header-link ${
-                  pathname === "/projects" ? "active" : ""
-                }`}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/what-i-learned"
-                className={`relative text-primary text-[15px] font-normal   header-link ${
-                  pathname === "/what-i-learned" ? " active" : ""
-                }`}
-              >
-                What I Learned
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/uses"
-                className={`relative  text-primary text-[15px] font-normal  header-link ${
-                  pathname === "/blog" ? "active" : ""
-                }`}
-              >
-                Uses
-              </Link>
-            </li>
+    <nav className="z-10 w-full mx-auto  sticky top-0 backdrop-blur-xl shadow-md">
+      <div className="h-[56px] grid grid-cols-12">
+        <div className="col-span-2">
+          <div className="pl-[20px] h-full flex items-center justify-start">
+            <Link href="/" className="font-bold text-[26px]">
+              Neil Dumpling
+            </Link>
+          </div>
+        </div>
+        <div className="col-span-8">
+          <ul className="w-full h-full flex gap-8 items-strech h-auto ">
+            {navs.map((nav, idx) => {
+              return (
+                <li
+                  key={idx}
+                  className="w-full flex items-center justify-center"
+                >
+                  <Link
+                    href={nav.href}
+                    className={`relative px-[10px] py-[8px] flex items-center justify-center text-primary text-[15px] font-normal rounded-[6px] ${
+                      pathname === nav.href ? "" : ""
+                    }`}
+                  >
+                    <nav.icon className="text-[20px]" />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
-        <div className="flex items-center">
-          <button className="group" onClick={toggleDrawer}>
-            <SearchIcon className="hover:opacity-50" />
-          </button>
+        <div className="col-span-2">
+          <div className="h-full">
+            <div className="pl-[20px] h-full flex items-center justify-center">
+              <motion.button
+                className="group flex items-center justify-center w-[36px] h-[36px] bg-black rounded-[6px]"
+                onClick={toggleDrawer}
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+              >
+                <FiSearch className="text-white text-[20px]" />
+              </motion.button>
+            </div>
+          </div>
         </div>
       </div>
       <SearchDrawer />
@@ -134,7 +148,7 @@ const SearchDrawer = () => {
             onClick={() => {}}
             className="px-4 py-2 border-l border-black/40"
           >
-            <SearchIcon className="hover:opacity-50" />
+            <FiSearch className="hover:opacity-50 text-white" />
           </button>
         </div>
         <div className="mt-12 flex justify-between">
@@ -157,31 +171,6 @@ const SearchDrawer = () => {
               </div>
             ))}
           </div>
-          <ul className="flex flex-col gap-[8px]">
-            <li>
-              <Link target="_blank" href="https://www.facebook.com/jm.1511/">
-                <FacebookIcon className="hover:fill-black/60" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                target="_blank"
-                href="https://www.instagram.com/hoanganh.ui/"
-                className="hover:fill-black/60"
-              >
-                <InstagramIcon />
-              </Link>
-            </li>
-            <li>
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/in/hoanganh1511/"
-                className="hover:fill-black/60"
-              >
-                <LinkedInIcon />
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
     </div>

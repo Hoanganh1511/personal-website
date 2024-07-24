@@ -8,7 +8,7 @@ const LatestList = ({ posts }: P) => {
   return (
     <>
       {posts.length > 0 && (
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-[42px] gap-y-[63px]">
+        <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-2 gap-x-[16px] gap-y-[32px]">
           {posts.map((post, idx) => (
             <LatestCard post={post} id={idx} key={idx} />
           ))}
