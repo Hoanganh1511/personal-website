@@ -26,26 +26,13 @@ const sorts = [
 const LatestSection = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [categories, setCategories] = useState<IOption[]>([]);
-  // const [keyword, setKeyword] = useState("");
-  // const [filter, setFilter] = useState({
-  //   category: "",
-  //   sort: "desc",
-  // });
-
-  // const debounced = useDebounceCallback(setKeyword, 1000);
-  // const [searchLoading, setSearchLoading] = useState(true);
-  // const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    // if (keyword.length > 0) {
-    //   setSearchLoading(true);
-    // }
-    // setLoading(true);
-    getAllPosts({}).then((res) => {
-      if (res) {
-        setPosts(res);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   getAllPosts({}).then((res) => {
+  //     if (res) {
+  //       setPosts(res);
+  //     }
+  //   });
+  // }, []);
   useEffect(() => {
     getAllCategory().then((res) => {
       if (res) {

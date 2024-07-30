@@ -5,21 +5,19 @@ import { groq } from "next-sanity";
 export const ITEMS_PER_PAGE = 6;
 interface IParams {
   category?: string;
-  sort?: string;
-  keyword?: string;
+  // sort?: string;
+  // keyword?: string;
 }
 const getAllPosts = (params: IParams) => {
-  const querySanity = groq`*[_type=="post"
-  ${params && params.keyword?.length! > 0 ? "&& title match $keyword" : ""}
-  ]{
+  const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current]{
           ...,
           author->,
           categories[]->,
-        } | order(_updatedAt ${params.sort || "asc"})`;
+          "category": *[_type == 'category' && references(^._id)]
+        } | order(_updatedAt asc)`;
 
   return client.fetch(querySanity, {
-    sort: params.sort || "desc",
-    keyword: params.keyword || "",
+    category: params.category,
   });
 };
 

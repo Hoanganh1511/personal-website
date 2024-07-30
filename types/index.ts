@@ -1,3 +1,4 @@
+export type SearchParamsType = Record<string, string | string[] | undefined>;
 type Base = {
   _createdAt: string;
   _id: string;

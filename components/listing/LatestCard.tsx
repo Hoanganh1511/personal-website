@@ -29,7 +29,7 @@ const LatestCard = ({ post, id }: { post: Post; id: number }) => {
         className="w-full h-[290px] object-cover"
       />
       <div className="p-[20px]">
-        <h2 className="mt-[16px] min-h-[96px] text-[24px] font-bold  line-clamp-3">
+        <h2 className="mt-[16px]  h-[90px] leading-[28px] text-[24px] font-bold line-clamp-3">
           {post.title}
         </h2>
         <div className="flex">

@@ -19,7 +19,7 @@ const PostCard = ({ post }: { post: Post }) => {
         className="w-full h-[200px] object-fill border-b"
       />
       <div className="p-[20px]">
-        <h2 className="text-[20px] h-[84px] leading-[28px] mt-[16px] font-semibold group-hover:text-black/70">
+        <h2 className="text-[20px] h-[84px] leading-[30px] mt-[16px] font-semibold group-hover:text-black/70">
           {post.title}
         </h2>
 

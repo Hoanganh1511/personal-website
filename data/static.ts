@@ -36,66 +36,76 @@ export const LEFT_SIDE_BAR = [
 ];
 export const LIST_CONCEPT = [
   {
-    text: "React",
-    href: "/category/react",
-    icon: FaReact,
+    title: "GraphQL",
+    tag: "graph-ql",
   },
   {
-    text: "Next.js",
-    href: "/category/next",
-    icon: SiNextdotjs,
-  },
-  {
-    text: "Redux",
-    href: "/category/redux",
-    icon: SiRedux,
-  },
-  {
-    text: "Node.js",
-    href: "/category/node",
-    icon: FaNode,
-  },
-
-  {
-    text: "Markdown",
-    href: "/category/md",
-    icon: FaMarkdown,
-  },
-  {
-    text: "DevTools",
-    href: "/category/devtool",
-    icon: FaTools,
-  },
-
-  {
-    text: "Javascript",
-    href: "/category/js",
-    icon: IoLogoJavascript,
-  },
-  {
-    text: "HTML",
-    href: "/category/html",
-    icon: FaHtml5,
-  },
-  {
-    text: "CSS",
-    href: "/category/css",
-    icon: IoLogoCss3,
-  },
-  {
-    text: "Git",
-    href: "/category/git",
-    icon: FaGithub,
-  },
-  {
-    text: "CLI",
-    href: "/category/cli",
-    icon: IoTerminal,
-  },
-  {
-    text: "GraphQL",
-    href: "/category/graphql",
-    icon: GrGraphQl,
+    title: "Agile Scrum",
+    tag: "agile-scrum",
   },
 ];
 // https://flaviocopes.com/tags/cli/
+[
+  {
+    _id: "2760d5fe-59cf-4fd2-bdb2-ec878d59cdf0",
+    tag: {
+      current: "graph-ql",
+      _type: "slug",
+    },
+    title: "GraphQL",
+    _updatedAt: "2024-07-30T06:54:34Z",
+    _createdAt: "2024-07-30T06:54:34Z",
+    _rev: "SRrrMQUr2Cz7iHxH5vfXuw",
+    _type: "category",
+    description:
+      "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.",
+  },
+  {
+    _type: "category",
+    _id: "77c4ac08-82e7-4376-b463-76b7d8fb098e",
+    tag: {
+      current: "aws-for-frontend-engineer",
+      _type: "slug",
+    },
+    title: "AWS for Frontend Engineer",
+    _updatedAt: "2024-06-12T14:48:38Z",
+    _createdAt: "2024-06-12T14:48:38Z",
+    _rev: "U0b1RlpuuXewg2cVCIgCwY",
+  },
+  {
+    _createdAt: "2024-06-07T02:28:08Z",
+    _rev: "Vc8BXHwzxxYzfinngFc6x1",
+    _type: "category",
+    _id: "26df060c-9def-4ce6-8987-39fe08c77680",
+    tag: {
+      current: "api-architecture",
+      _type: "slug",
+    },
+    title: "API Architecture ",
+    _updatedAt: "2024-06-07T02:28:08Z",
+  },
+  {
+    _type: "category",
+    _id: "bf9f0817-6825-4fb3-98f1-065cca8ca6ef",
+    tag: {
+      current: "react-js-or-next-js",
+      _type: "slug",
+    },
+    title: "React.js | Next.js",
+    _updatedAt: "2024-06-06T05:00:09Z",
+    _createdAt: "2024-06-06T05:00:09Z",
+    _rev: "I7iynhkHjhsDvz6bpvoSTw",
+  },
+  {
+    tag: {
+      current: "agile-scrum",
+      _type: "slug",
+    },
+    title: "Agile Scrum",
+    _updatedAt: "2024-06-06T02:20:53Z",
+    _createdAt: "2024-06-06T02:20:53Z",
+    _rev: "w0qZrDtfCMX8CDU9lsBqzK",
+    _type: "category",
+    _id: "6f01ed35-18df-4602-80b6-23e5226d66d8",
+  },
+];

@@ -24,20 +24,14 @@ const RichTextComponent = {
     image: ({ value }: any) => <div></div>,
     callToAction: ({ value, isInline }: any) =>
       isInline ? <a></a> : <div></div>,
-    table: Table,
-    tableRow: TableRow,
   },
   list: {
     bullet: ({ children }: any) => <ul className="mt-4">{children}</ul>,
     number: ({ children }: any) => <ol className="mt-4">{children}</ol>,
   },
   listItem: {
-    bullet: ({ children }: any) => (
-      <li className="ml-4 mt-2 font-light  list-disc">{children}</li>
-    ),
-    number: ({ children }: any) => (
-      <li className="ml-4 mt-2 font-light  list-decimal">{children}</li>
-    ),
+    bullet: ({ children }: any) => <li className="mt-2">{children}</li>,
+    number: ({ children }: any) => <li className="mt-2 ">{children}</li>,
   },
   block: {
     h1: ({ children }: any) => <h1>{children}</h1>,
@@ -65,7 +59,7 @@ const RichTextComponent = {
       </blockquote>
     ),
     normal: ({ children }: any) => (
-      <p className="font-light leading-[22.4px] mt-3 ">{children}</p>
+      <p className="leading-[22.4px] text-[16px] mt-3">{children}</p>
     ),
   },
   marks: {
