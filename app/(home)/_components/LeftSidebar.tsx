@@ -37,7 +37,7 @@ const LeftSidebar = () => {
             );
           })}
         </ul>
-        <span className="block my-4" />
+        {/* <span className="block my-4" />
         <div className="block pl-[20px] mb-[12px] text-[20px] font-semibold uppercase text-custom-blue">
           Software Series
         </div>
@@ -59,7 +59,7 @@ const LeftSidebar = () => {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
       <div className="my-4" />
       <div className="">
