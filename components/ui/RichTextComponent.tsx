@@ -30,13 +30,23 @@ const RichTextComponent = {
     number: ({ children }: any) => <ol className="mt-4">{children}</ol>,
   },
   listItem: {
-    bullet: ({ children }: any) => <li className="mt-2">{children}</li>,
-    number: ({ children }: any) => <li className="mt-2 ">{children}</li>,
+    bullet: ({ children }: any) => (
+      <li className="ml-8 mt-2 list-disc leading-[30.6px] text-[18px]  text-[rgba(0,0,0,.87)] font-poppins">
+        {children}
+      </li>
+    ),
+    number: ({ children }: any) => (
+      <li className="mt-2 leading-[30.6px] text-[18px]  text-[rgba(0,0,0,.87)] font-poppins">
+        {children}
+      </li>
+    ),
   },
   block: {
     h1: ({ children }: any) => <h1>{children}</h1>,
     h2: ({ children }: any) => (
-      <h2 className="mt-16 mb-4 text-[28px] font-bold">{children}</h2>
+      <h2 className="block py-[22px] text-[28px] leading-normal font-poppins font-semibold">
+        {children}
+      </h2>
     ),
     h3: ({ children }: any) => (
       <h3 className="mt-10 mb-4 text-[16.5px] text-[#333333] font-bold">
@@ -54,12 +64,16 @@ const RichTextComponent = {
       </h5>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote>
-        <q>{children}</q>
+      <blockquote className="rounded-[8px] p-[20px] bg-[rgba(248,211,226,.09)] border-[1px] border-[rgba(51,181,51,1)]">
+        <q className="text-[18px] text-[rgba(0,0,0,.87)] font-poppins leading-[30.6px]">
+          {children}
+        </q>
       </blockquote>
     ),
     normal: ({ children }: any) => (
-      <p className="leading-[22.4px] text-[16px] mt-3">{children}</p>
+      <p className="odd:border-red-500 block leading-[30.6px] text-[18px] my-[18px] text-[rgba(0,0,0,.87)] font-poppins">
+        {children}
+      </p>
     ),
   },
   marks: {
@@ -79,7 +93,7 @@ const RichTextComponent = {
       );
     },
     strong: ({ children }: any) => (
-      <strong className="font-bold text-[18px]">{children}</strong>
+      <strong className="font-poppins-bold text-[18px]">{children}</strong>
     ),
   },
 };

@@ -4,8 +4,8 @@ import { Lexend, Lora, IBM_Plex_Sans, Xanh_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "@/redux/provider";
-import LeftSidebar from "./_components/LeftSidebar";
-import RightSidebar from "./_components/RightSidebar";
+import LeftSidebar from "../../components/layout/LeftSidebar";
+import RightSidebar from "../../components/layout/RightSidebar";
 
 export default function RootLayout({
   children,

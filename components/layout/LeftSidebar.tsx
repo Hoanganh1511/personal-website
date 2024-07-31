@@ -1,56 +1,66 @@
-import Link from "next/link";
-import React from "react";
-import { PiCoffeeFill } from "react-icons/pi";
-import { BsFillSuitcaseLgFill } from "react-icons/bs";
-import { FaPersonRays } from "react-icons/fa6";
-import { FaBellConcierge } from "react-icons/fa6";
-import { LIST_CONCEPT } from "@/data/static";
+"use client";
+import { getAllCategory } from "@/actions/get-category";
+import { LEFT_SIDE_BAR, LIST_CONCEPT } from "@/data/static";
+import { ICategory } from "@/types/apiTypes";
+import React, { useEffect, useState } from "react";
 const LeftSidebar = () => {
+  const [list, setList] = useState<ICategory[]>([]);
+  useEffect(() => {
+    getAllCategory().then((res) => {
+      setList(res);
+      console.log(res);
+    });
+  }, []);
+
   return (
-    <div className="sticky top-[80px] min-h-screen p-[20px]  border-r-[1px] border-black/20">
+    <div className="sticky top-[90px] p-[20px]">
+      <div>
+        <div className="block pl-[20px] mb-[12px] text-[20px] font-semibold uppercase text-custom-blue">
+          Danh sách chủ đề
+        </div>
+        <ul className="">
+          {LEFT_SIDE_BAR.map((e, i) => {
+            return (
+              <li key={i}>
+                <a
+                  href={e.href}
+                  className=" relative flex items-center py-[10px] pl-[20px] rounded-tl-[18px] rounded-bl-[18px] hover:bg-black/10 hover:after:block duration-300 cursor-pointer
+                         after:absolute after:top-0 after:right-0 after:w-[4px] after:h-full after:bg-black/70 after:hidden after:duration-300
+                  "
+                >
+                  <e.icon className="inline-block mr-[8px] text-gray-500 text-[18px] " />
+                  <span className="text-gray-500 uppercase font-medium">
+                    {e.text}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="my-4" />
       <div className="">
-        <div></div>
-        <ul className="flex flex-col gap-y-[18px]">
-          <li>
-            <Link href="/chuyen-muc/cuoc-song">
-              <>
-                <PiCoffeeFill className="inline-block text-[20px] mr-[8px]" />
-                <span className="text-[14px] uppercase font-semibold">
-                  Cuộc sống
-                </span>
-              </>
-            </Link>
-          </li>
-          <li>
-            <Link href="/chuyen-muc/cuoc-song">
-              <>
-                <BsFillSuitcaseLgFill className="inline-block text-[20px] mr-[8px]" />
-                <span className="text-[14px] uppercase font-semibold">
-                  Công việc
-                </span>
-              </>
-            </Link>
-          </li>
-          <li>
-            <Link href="/chuyen-muc/cuoc-song">
-              <>
-                <FaPersonRays className="inline-block text-[20px] mr-[8px]" />
-                <span className="text-[14px] uppercase font-semibold">
-                  Kĩ năng mềm
-                </span>
-              </>
-            </Link>
-          </li>
-          <li>
-            <Link href="/chuyen-muc/cuoc-song">
-              <>
-                <FaBellConcierge className="inline-block text-[20px] mr-[8px]" />
-                <span className="text-[14px] uppercase font-semibold">
-                  Thưởng thức
-                </span>
-              </>
-            </Link>
-          </li>
+        <span className="block pl-[20px] mb-[12px] text-[20px] font-semibold uppercase text-custom-blue">
+          Chủ đề
+        </span>
+        <ul>
+          {LIST_CONCEPT.map((item, id) => {
+            return (
+              <li key={id}>
+                <a
+                  href={`/category/${item.tag}`}
+                  className=" relative flex items-center py-[10px] pl-[20px] rounded-tl-[18px] rounded-bl-[18px] hover:bg-black/10 hover:after:block duration-300 cursor-pointer
+                         after:absolute after:top-0 after:right-0 after:w-[4px] after:h-full after:bg-black/70 after:hidden after:duration-300
+                  "
+                >
+                  {/* <item.icon className="inline-block mr-[8px] text-gray-500 text-[18px] " /> */}
+                  <span className="text-gray-500 text-[17px] font-medium">
+                    {item.title}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

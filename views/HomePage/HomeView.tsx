@@ -95,16 +95,16 @@ const HomeView = async () => {
                   <div className="flex flex-col gap-y-[12px]">
                     <a
                       href={`/blog/${singleArticle._id}`}
-                      className="text-[20px] font-bold font-poppins text-[#292929] hover:underline"
+                      className="text-[20px] leading-[24px] font-bold font-poppins text-[#292929] hover:underline"
                     >
                       {singleArticle.title}
                     </a>
-                    <p className="line-clamp-2 text-black/80">
+                    <p className="line-clamp-2 text-black/80 text-[14px] leading-[22px] font-poppins">
                       {singleArticle.sapo}
                     </p>
                   </div>
                   <div className="flex">
-                    <div className="flex items-center mt-[12px]">
+                    <div className="flex items-center mt-[14px]">
                       <Link
                         href={`/blog/${singleArticle._id}`}
                         className="w-[32px] h-[32px] rounded-full flex justify-center items-center bg-red-400"

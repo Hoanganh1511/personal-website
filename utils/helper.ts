@@ -5,3 +5,8 @@ export const formatDateTime = (dateInput: string) => {
   const year = date.getFullYear();
   return `${day}/${month}/${year}`;
 };
+
+export const formatDateTime2 = (dateInput: string) => {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Date(dateInput).toLocaleDateString("en-US", options);
+};

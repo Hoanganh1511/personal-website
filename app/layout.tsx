@@ -8,9 +8,14 @@ import { Providers } from "@/redux/provider";
 import Footer from "@/components/Footer";
 
 const poppinsVN = localFont({
-  src: "./Poppins-Regular.otf",
+  src: "./Poppins-Light.otf",
   display: "swap",
   variable: "--font-poppins",
+});
+const poppinsVN_Bold = localFont({
+  src: "./Poppins-Bold.otf",
+  display: "swap",
+  variable: "--font-poppins-bold",
 });
 
 const lexend = Lexend({
@@ -48,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppinsVN.variable} ${ibm_plex_sans.variable} ${lora.variable} ${lexend.variable} ${xanh_mono.variable} font-lexend text-base leading-[22.4px]`}
+        className={`${poppinsVN.variable} ${poppinsVN_Bold.variable} ${ibm_plex_sans.variable} ${lora.variable} ${lexend.variable} ${xanh_mono.variable} font-lexend text-base leading-[22.4px]`}
       >
         <Providers>
           <Navbar />

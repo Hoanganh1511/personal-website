@@ -45,7 +45,9 @@ const getArticlesByCategory = async (params: IParams) => {
 
 const getDetailPost = async (id: string) => {
   const post = await client.fetch(
-    groq`*[_type=="post" && _id == $id ][0]`,
+    groq`*[_type=="post" && _id == $id ][0]{
+      ...,
+    }`,
     { id },
     {
       //  cache: "cache",
