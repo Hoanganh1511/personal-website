@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { Post } from "@/types";
+
 import urlFor from "@/libs/urlFor";
 import Link from "next/link";
 import { formatDateTime } from "@/utils/helper";
-const PostCard = ({ post }: { post: Post }) => {
+import { IArticle } from "@/types/apiTypes";
+const PostCard = ({ post }: { post: IArticle }) => {
   return (
     <Link
       key={post._id}

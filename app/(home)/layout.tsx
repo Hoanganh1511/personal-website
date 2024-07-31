@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="pt-[15px] bg-gray-100">
+    <div className="bg-white">
       <div className="flex justify-between">
         <div className="w-[20%]">
           <LeftSidebar />

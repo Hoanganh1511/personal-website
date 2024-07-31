@@ -36,6 +36,18 @@ export const LEFT_SIDE_BAR = [
 ];
 export const LIST_CONCEPT = [
   {
+    title: "React",
+    tag: "react",
+  },
+  {
+    title: "Next.js",
+    tag: "next",
+  },
+  {
+    title: "Javascript",
+    tag: "javascript",
+  },
+  {
     title: "GraphQL",
     tag: "graph-ql",
   },

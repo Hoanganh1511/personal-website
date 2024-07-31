@@ -1,8 +1,8 @@
 import React from "react";
 import LatestCard from "./LatestCard";
-import { Post } from "@/types";
+import { IArticle } from "@/types/apiTypes";
 interface P {
-  posts: Post[];
+  posts: IArticle[];
 }
 const LatestList = ({ posts }: P) => {
   return (

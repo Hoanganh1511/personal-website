@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Lexend, Lora, IBM_Plex_Sans, Xanh_Mono } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "@/redux/provider";
 import Footer from "@/components/Footer";
+
+const poppinsVN = localFont({
+  src: "./Poppins-Regular.otf",
+  display: "swap",
+  variable: "--font-poppins",
+});
+
 const lexend = Lexend({
   subsets: ["latin"],
   variable: "--font-lexend",
@@ -40,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ibm_plex_sans.variable} ${lora.variable} ${lexend.variable} ${xanh_mono.variable} font-lexend text-base leading-[22.4px]`}
+        className={`${poppinsVN.variable} ${ibm_plex_sans.variable} ${lora.variable} ${lexend.variable} ${xanh_mono.variable} font-lexend text-base leading-[22.4px]`}
       >
         <Providers>
           <Navbar />

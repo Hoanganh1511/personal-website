@@ -1,51 +1,42 @@
-import { Post } from "@/types";
 import React from "react";
 import Image from "next/image";
 import urlFor from "@/libs/urlFor";
 import Link from "next/link";
-import { motion } from "framer-motion";
-const convertFormatDate = (dateInput: string) => {
-  const date = new Date(dateInput);
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
-};
-const LatestCard = ({ post, id }: { post: Post; id: number }) => {
+import { IArticle } from "@/types/apiTypes";
+import { formatDateTime } from "@/utils/helper";
+
+const LatestCard = ({ post, id }: { post: IArticle; id: number }) => {
   return (
-    <motion.a
+    <a
       href={`/blog/${post._id}`}
-      className={`group cursor-pointer relative shadow-[0_16px_32px_0_rgba(41,41,41,.1)] rounded-[12px] overflow-hidden`}
-      initial="initial"
-      whileHover="hover"
+      className={`group cursor-pointer relative bg-white shadow-[0_16px_32px_0_rgba(41,41,41,.1)] rounded-[12px] overflow-hidden`}
     >
-      {/* <motion.div variants={glowVariants} className="glow" /> */}
       <Image
         src={urlFor(post.mainImage).url()}
         alt=""
         width={300}
         height={150}
         quality={100}
-        className="w-full h-[290px] object-cover"
+        className="w-full h-[180px] object-cover border-b border-black/5"
       />
       <div className="p-[20px]">
-        <h2 className="mt-[16px]  h-[90px] leading-[28px] text-[24px] font-bold line-clamp-3">
+        <h2 className="leading-[28px] text-[23px] font-poppins font-bold line-clamp-2">
           {post.title}
         </h2>
-        <div className="flex">
-          <div className="w-[46px] h-[46px] rounded-full flex justify-center items-center bg-red-400">
+        <div className="mt-8 flex">
+          <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-red-400">
             <Image
               src="https://cdn-icons-png.flaticon.com/512/5556/5556499.png"
               alt="avatar"
-              width={36}
-              height={36}
+              width={32}
+              height={32}
               className="rounded-full "
             />
           </div>
           <div className="ml-3">
-            <div className="font-bold text-[16.75px]">Tuấn Anh</div>
-            <div className="text-[13.5px] text-[#0000008c]">
-              Cập nhật gần nhất: {convertFormatDate(post._updatedAt)}
+            <div className="font-bold leading-[1rem] text-[16px]">Tuấn Anh</div>
+            <div className="text-[13px] text-[#0000008c]">
+              Cập nhật gần nhất: {formatDateTime(post._updatedAt)}
             </div>
           </div>
         </div>
@@ -53,7 +44,7 @@ const LatestCard = ({ post, id }: { post: Post; id: number }) => {
           By {post.author.name} - Cập nhật {convertFormatDate(post._updatedAt)}
         </p> */}
       </div>
-    </motion.a>
+    </a>
   );
 };
 

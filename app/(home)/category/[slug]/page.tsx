@@ -1,4 +1,3 @@
-import { getAllPosts } from "@/actions/get-posts";
 import Image from "next/image";
 import urlFor from "@/libs/urlFor";
 import CategoryView from "@/views/Category/CategoryView";
