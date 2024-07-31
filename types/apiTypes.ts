@@ -1,3 +1,16 @@
+interface Reference {
+  _ref: string;
+  _type: "reference";
+}
+
+interface ImageAsset {
+  _type: "reference";
+  _ref: string;
+}
+interface Image {
+  _type: "image";
+  asset: Reference;
+}
 type Base = {
   _createdAt: string;
   _id: string;
@@ -12,23 +25,25 @@ interface Block {
   children: any[];
   _type: "block";
 }
-interface Reference {
-  _ref: string;
-  _type: "reference";
-}
-
-interface ImageAsset {
-  _type: "reference";
-  _ref: string;
-}
-interface Image {
-  _type: "image";
-  asset: Reference;
-}
 interface Author extends Base {
   name: string;
 }
-export interface Post extends Base {
+
+export interface ICategory {
+  _createdAt: string;
+  _rev: string;
+  _type: string;
+  _id: string;
+  tag: ITag;
+  title: string;
+  _updatedAt: string;
+}
+
+export interface ITag {
+  current: string;
+  _type: string;
+}
+export interface IArticle extends Base {
   mainImage: {
     _type: "image";
     asset: ImageAsset;

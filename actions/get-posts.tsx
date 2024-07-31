@@ -1,30 +1,46 @@
 import { client } from "@/libs/sanity.client";
-// import { Post } from "@/types";
+import { IArticle } from "@/types/apiTypes";
 import { groq } from "next-sanity";
 
-interface Query {
-  queryId?: string;
-  pageIndex?: number;
-}
 export const ITEMS_PER_PAGE = 6;
 interface IParams {
   category?: string;
-  sort?: string;
-  keyword?: string;
 }
-const getAllPosts = (params: IParams) => {
-  const querySanity = groq`*[_type=="post"
-  ${params && params.keyword?.length! > 0 ? "&& title match $keyword" : ""}
-  ]{
+const getAllArticle = async (params: { limit?: number }) => {
+  const querySanity = groq`*[_type=="post"] ${params.limit ? `[0...${params.limit}]` : ""} {
           ...,
           author->,
           categories[]->,
-        } | order(_updatedAt ${params.sort || "asc"})`;
+        } | order(_updatedAt asc)`;
 
-  return client.fetch(querySanity, {
-    sort: params.sort || "desc",
-    keyword: params.keyword || "",
+  const data = await client.fetch(querySanity);
+  return {
+    articles: data as IArticle[],
+  };
+};
+const getArticlesByCategory = async (params: IParams) => {
+  const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current]{
+          ...,
+          author->,
+          categories[]->,
+          "category": *[_type == 'category' && tag.current == $category][0]
+        } | order(_updatedAt asc)`;
+
+  const data = await client.fetch(querySanity, {
+    category: params.category,
   });
+  if (!data.length) {
+    return {
+      articles: [],
+      title: "",
+      description: "",
+    };
+  }
+  return {
+    articles: data,
+    title: data[0].category.title,
+    description: data[0].category.description,
+  };
 };
 
 const getDetailPost = async (id: string) => {
@@ -37,4 +53,4 @@ const getDetailPost = async (id: string) => {
   );
   return post;
 };
-export { getAllPosts, getDetailPost };
+export { getAllArticle, getArticlesByCategory, getDetailPost };

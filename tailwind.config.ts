@@ -19,7 +19,7 @@ const config: Config = {
       fontFamily: {
         lexend: ["var(--font-lexend)"],
         lora: ["var(--font-lora)"],
-
+        poppins: ["var(--font-poppins)"],
         amazon: ["AmazonEmber", "sans-serif"],
         "ibm-plex-sans": ["var(--font-ibm-plex-sans)"],
         "xanh-mono": ["var(--font-xanh-mono)"],

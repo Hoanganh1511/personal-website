@@ -136,7 +136,7 @@ const SearchDrawer = () => {
             onClick={() => {}}
             className="px-4 py-2 border-l border-black/40"
           >
-            <SearchIcon className="hover:opacity-50" />
+            <FiSearch className="hover:opacity-50 text-white" />
           </button>
         </div>
         <div className="mt-12 flex justify-between">
@@ -159,31 +159,6 @@ const SearchDrawer = () => {
               </div>
             ))}
           </div>
-          <ul className="flex flex-col gap-[8px]">
-            <li>
-              <Link target="_blank" href="https://www.facebook.com/jm.1511/">
-                <FacebookIcon className="hover:fill-black/60" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                target="_blank"
-                href="https://www.instagram.com/hoanganh.ui/"
-                className="hover:fill-black/60"
-              >
-                <InstagramIcon />
-              </Link>
-            </li>
-            <li>
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/in/hoanganh1511/"
-                className="hover:fill-black/60"
-              >
-                <LinkedInIcon />
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
