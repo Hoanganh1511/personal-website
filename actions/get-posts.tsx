@@ -11,7 +11,7 @@ const getAllArticle = async (params: { limit?: number }) => {
           ...,
           author->,
           categories[]->,
-        } | order(_updatedAt asc)`;
+        } | order(_createdAt desc)`;
 
   const data = await client.fetch(querySanity);
   return {

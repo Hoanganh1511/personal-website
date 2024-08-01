@@ -6,11 +6,17 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "@/redux/provider";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/layout/TopBanner";
 
 const poppinsVN = localFont({
   src: "./Poppins-Light.otf",
   display: "swap",
   variable: "--font-poppins",
+});
+const poppinsVN_Medium = localFont({
+  src: "./Poppins-Medium.otf",
+  display: "swap",
+  variable: "--font-poppins-medium",
 });
 const poppinsVN_Bold = localFont({
   src: "./Poppins-Bold.otf",
@@ -53,9 +59,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppinsVN.variable} ${poppinsVN_Bold.variable} ${ibm_plex_sans.variable} ${lora.variable} ${lexend.variable} ${xanh_mono.variable} font-lexend text-base leading-[22.4px]`}
+        className={`${poppinsVN.variable} ${poppinsVN_Bold.variable} ${poppinsVN_Medium.variable} ${ibm_plex_sans.variable} ${lora.variable} ${lexend.variable} ${xanh_mono.variable} font-lexend text-base leading-[22.4px]`}
       >
         <Providers>
+          <TopBanner />
           <Navbar />
           {children}
           <Footer />

@@ -41,7 +41,7 @@ export const LIST_CONCEPT = [
   },
   {
     title: "Next.js",
-    tag: "next",
+    tag: "next-js",
   },
   {
     title: "Javascript",
@@ -50,6 +50,22 @@ export const LIST_CONCEPT = [
   {
     title: "GraphQL",
     tag: "graph-ql",
+  },
+  {
+    title: "Form Handling",
+    tag: "form-handling",
+  },
+  {
+    title: "Client State Management",
+    tag: "client-state-management",
+  },
+  {
+    title: "Server State Management",
+    tag: "server-state-management",
+  },
+  {
+    title: "Styles",
+    tag: "styles",
   },
   {
     title: "Agile Scrum",

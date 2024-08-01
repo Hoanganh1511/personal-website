@@ -29,7 +29,7 @@ const Navbar = () => {
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
 
   return (
-    <nav className="z-10 w-full mx-auto  sticky top-0 backdrop-blur-2xl shadow-md">
+    <nav className="z-10 w-full mx-auto  sticky top-0 backdrop-blur-[20px] shadow-md">
       <div className="h-[60px] max-w-full px-[20px] mx-auto flex justify-between items-center">
         <div className="w-[20%]">
           <Link href="/" className="text-primary text-[24px] font-extrabold">

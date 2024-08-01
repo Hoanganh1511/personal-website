@@ -4,7 +4,7 @@ import { PortableText } from "next-sanity";
 import React from "react";
 import Image from "next/image";
 import urlFor from "@/libs/urlFor";
-import { formatDateTime, formatDateTime2 } from "@/utils/helper";
+import { formatDateTime2 } from "@/utils/helper";
 const BlogDetail = async ({ params }: { params: { id: string } }) => {
   const post = await getDetailPost(params.id);
   return (

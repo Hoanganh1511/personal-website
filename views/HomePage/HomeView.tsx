@@ -1,23 +1,24 @@
 import { getAllArticle } from "@/actions/get-posts";
 import LatestCard from "@/components/listing/LatestCard";
 import urlFor from "@/libs/urlFor";
-import { formatDateTime } from "@/utils/helper";
+import { formatDateTime, subtractDate } from "@/utils/helper";
 import Image from "next/image";
 import Link from "next/link";
-
+import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 const HomeView = async () => {
   const allArticle = await getAllArticle({ limit: 10 });
   if (!allArticle.articles) return;
   const data1 = allArticle.articles.slice(0, 2);
   const data2 = allArticle.articles.slice(2, 5);
   const data3 = allArticle.articles.slice(5, 10);
+  const now = new Date();
   return (
     <div className="py-10">
       <div className="mb-[30px]">
         {data1.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-2 gap-x-[16px] gap-y-[32px]">
             {data1.map((singleArticle, idx) => (
-              <LatestCard post={singleArticle} id={idx} key={idx} />
+              <LatestCard article={singleArticle} id={idx} key={idx} />
             ))}
           </div>
         )}
@@ -41,24 +42,32 @@ const HomeView = async () => {
                     <p className="text-white text-[18px] font-ibm-plex-sans font-bold">
                       {singleArticle.title}
                     </p>
-                    <div className="mt-6 flex">
-                      <div className="w-[32px] h-[32px] rounded-full flex justify-center items-center bg-red-400">
-                        <Image
-                          src="https://cdn-icons-png.flaticon.com/512/5556/5556499.png"
-                          alt="avatar"
-                          width={28}
-                          height={28}
-                          className="rounded-full "
-                        />
+                    <div className="mt-6 flex justify-between">
+                      <div className="flex">
+                        <div className="w-[32px] h-[32px] rounded-full flex justify-center items-center bg-red-400">
+                          <Image
+                            src="https://cdn-icons-png.flaticon.com/512/5556/5556499.png"
+                            alt="avatar"
+                            width={28}
+                            height={28}
+                            className="rounded-full "
+                          />
+                        </div>
+                        <div className="ml-3">
+                          <div className="font-bold text-[14px] leading-[1rem] text-white">
+                            Tuấn Anh
+                          </div>
+                          <div className="text-[12px] text-white">
+                            {subtractDate(
+                              singleArticle._createdAt,
+                              now.toString()
+                            )}
+                          </div>
+                        </div>
                       </div>
-                      <div className="ml-3">
-                        <div className="font-bold text-[14px] leading-[1rem] text-white">
-                          Tuấn Anh
-                        </div>
-                        <div className="text-[12px] text-white">
-                          Cập nhật gần nhất:{" "}
-                          {formatDateTime(singleArticle._updatedAt)}
-                        </div>
+                      <div className="w-[48px] h-[48px] rounded-full flex items-center justify-center bg-[hsla(0,0%,100%,.4)] hover:bg-[hsla(0,0%,100%,.6)] cursor-pointer duration-300">
+                        <FaRegBookmark className="text-white text-[21px]" />
+                        {/* <FaBookmark className="text-white text-[21px]" /> */}
                       </div>
                     </div>
                   </div>

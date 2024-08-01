@@ -20,7 +20,9 @@ const config: Config = {
         lexend: ["var(--font-lexend)"],
         lora: ["var(--font-lora)"],
         poppins: ["var(--font-poppins)"],
+        "poppins-medium": ["var(--font-poppins-medium)"],
         "poppins-bold": ["var(--font-poppins-bold)"],
+
         amazon: ["AmazonEmber", "sans-serif"],
         "ibm-plex-sans": ["var(--font-ibm-plex-sans)"],
         "xanh-mono": ["var(--font-xanh-mono)"],
