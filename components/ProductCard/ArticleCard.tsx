@@ -11,23 +11,26 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <a
       href={`/blog/${article._id}`}
-      className={`group cursor-pointer relative  duration-300  overflow-hidden`}
+      className={`group cursor-pointer relative duration-300 
+         after:absolute after:top-0 after:right-[-20px] after:w-[2px] after:h-full after:border-r
+          before:absolute before:bottom-0 before:left-[-20px] before:w-[calc(100%+40px)] before:h-[1px] before:border-b
+        `}
     >
-      <Image
-        src={urlFor(article.mainImage).url()}
-        alt=""
-        width={300}
-        height={150}
-        quality={100}
-        className="w-full h-[180px] object-cover group-hover:brightness-80 duration-200 rounded-[6px]"
-      />
+      <div className="relative w-full h-[180px] rounded-[6px] overflow-hidden">
+        <Image
+          src={urlFor(article.mainImage).url()}
+          alt=""
+          fill
+          className="object-cover group-hover:brightness-[80%]  duration-300 "
+        />
+      </div>
       <div className="p-[20px] pl-0">
         <div className=" mb-2">
           <span className="text-blue-500 tracking-[0.75px]">
             WEB DEVELOPMENT
           </span>
         </div>
-        <h2 className="h-[90px] leading-normal text-[22px] font-ibm-plex-sans font-medium line-clamp-3">
+        <h2 className="mb-5 leading-normal text-[22px] font-ibm-plex-sans font-medium group-hover:underline line-clamp-2">
           {article.title}
         </h2>
         <div className="flex">

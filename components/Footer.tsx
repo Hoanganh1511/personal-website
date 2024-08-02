@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="py-8 border-t border-b border-black/20">
         <div className="flex justify-between">
           <Link href="" className="text-primary text-[24px] font-extrabold">
-            Neil dumpling
+            Hoàng Tuấn Anh
           </Link>
           <p className="text-[15px]">
             Powered by <span className="underline">Next.js</span>

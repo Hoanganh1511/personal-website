@@ -12,8 +12,11 @@ const LatestCard = ({ article, id }: { article: IArticle; id: number }) => {
   const now = new Date();
   return (
     <div
-      className={`group relative flex flex-col bg-white shadow-[0_16px_32px_0_rgba(41,41,41,.1)] rounded-[12px] overflow-hidden`}
+      className={`group relative flex flex-col bg-white shadow-[0_16px_32px_0_rgba(41,41,41,.1)] rounded-[12px]`}
     >
+      <span className="absolute outline outline-[1px] outline-black/10 top-[4px] right-[4px] px-[12px] py-[4px] bg-white rounded-tr-[8px]">
+        New
+      </span>
       <Link href={`/blog/${article._id}`}>
         <Image
           src={urlFor(article.mainImage).url()}
@@ -21,10 +24,9 @@ const LatestCard = ({ article, id }: { article: IArticle; id: number }) => {
           width={300}
           height={150}
           quality={100}
-          className="w-full h-[180px] object-cover border-b border-black/5"
+          className="w-full h-[200px] object-cover object-center rounded-t-[12px] border-b border-black/5"
         />
       </Link>
-
       <div className="flex-1 p-[20px] flex flex-col justify-between">
         <Link
           href={`/blog/${article._id}`}

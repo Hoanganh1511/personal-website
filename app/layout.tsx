@@ -62,7 +62,7 @@ export default function RootLayout({
         className={`${poppinsVN.variable} ${poppinsVN_Bold.variable} ${poppinsVN_Medium.variable} ${ibm_plex_sans.variable} ${lora.variable} ${lexend.variable} ${xanh_mono.variable} font-lexend text-base leading-[22.4px]`}
       >
         <Providers>
-          <TopBanner />
+          {/* <TopBanner /> */}
           <Navbar />
           {children}
           <Footer />

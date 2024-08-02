@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="h-[60px] max-w-full px-[20px] mx-auto flex justify-between items-center">
         <div className="w-[20%]">
           <Link href="/" className="text-primary text-[24px] font-extrabold">
-            Neil dumpling
+            Tuấn Anh
           </Link>
         </div>
         <ul className="w-[400px] flex gap-8 items-center justify-between h-auto ">

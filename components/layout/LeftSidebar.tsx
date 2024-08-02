@@ -1,5 +1,9 @@
+"use client";
 import { LEFT_SIDE_BAR, LIST_CONCEPT } from "@/data/static";
+import { usePathname } from "next/navigation";
 const LeftSidebar = () => {
+  const pathname = usePathname();
+
   return (
     <div className="sticky top-[90px] p-[20px]">
       <div>
@@ -33,15 +37,19 @@ const LeftSidebar = () => {
         </span>
         <ul>
           {LIST_CONCEPT.map((item, id) => {
+            const category = pathname.split("/")[2];
             return (
               <li key={id}>
                 <a
                   href={`/category/${item.tag}`}
-                  className=" relative flex items-center py-[10px] pl-[20px] rounded-tl-[18px] rounded-bl-[18px] hover:bg-black/10 hover:after:block duration-300 cursor-pointer
+                  className={` relative flex items-center py-[10px] pl-[20px] rounded-tl-[18px] rounded-bl-[18px] hover:bg-black/10 hover:after:block duration-300 cursor-pointer
                          after:absolute after:top-0 after:right-0 after:w-[4px] after:h-full after:bg-black/70 after:hidden after:duration-300
-                  "
+                       
+                         `}
                 >
-                  <span className="text-gray-500 text-[17px] font-medium">
+                  <span
+                    className={` text-[17px] font-medium  ${category === item.tag ? "text-blue-500" : "text-gray-500"}`}
+                  >
                     {item.title}
                   </span>
                 </a>
