@@ -5,16 +5,8 @@ const RightSidebar = () => {
   return (
     <div className="sticky top-[90px] p-[20px]">
       <div>
-        <div className="block  mb-[12px] text-[20px] font-semibold uppercase text-gray-500">
-          SERIES GAME
-        </div>
-        <div className="grid grid-cols-1 gap-x-[20px] gap-y-[20px]">
-          {/* <div className="w-full h-[100px] bg-gray-100 flex items-center justify-center">
-            <span>Pixel</span>
-          </div>
-          <div className="w-full h-[100px] bg-gray-100 flex items-center justify-center"></div>
-          <div className="w-full h-[100px] bg-gray-100 flex items-center justify-center"></div>
-          <div className="w-full h-[100px] bg-gray-100 flex items-center justify-center"></div> */}
+        <div className="block mb-[12px] text-[20px] font-semibold uppercase text-gray-500">
+          Phổ biến
         </div>
       </div>
       <div className="my-6" />
