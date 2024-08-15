@@ -50,7 +50,7 @@ const LatestCard = ({ article, id }: { article: IArticle; id: number }) => {
                 Tuấn Anh
               </div>
               <div className="mt-[2px] text-[13px] text-[#0000008c]">
-                {subtractDate(article._updatedAt, now.toString())}
+                {subtractDate(article._createdAt, now.toString())}
               </div>
             </div>
           </Link>

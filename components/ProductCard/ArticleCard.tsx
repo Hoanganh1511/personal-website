@@ -12,9 +12,9 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
     <a
       href={`/blog/${article._id}`}
       className={`group cursor-pointer relative duration-300 
-         after:absolute after:top-0 after:right-[-20px] after:w-[2px] after:h-full after:border-r
-          before:absolute before:bottom-0 before:left-[-20px] before:w-[calc(100%+40px)] before:h-[1px] before:border-b
-        `}
+        after:absolute after:top-0 after:right-[-20px] after:w-[2px] after:h-full after:border-r
+        before:absolute before:bottom-0 before:left-[-20px] before:w-[calc(100%+40px)] before:h-[1px] before:border-b
+      `}
     >
       <div className="relative w-full h-[180px] rounded-[6px] overflow-hidden">
         <Image

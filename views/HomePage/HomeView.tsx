@@ -6,11 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 const HomeView = async () => {
-  const allArticle = await getAllArticle({ limit: 10 });
+  const allArticle = await getAllArticle({ limit: 15 });
   if (!allArticle.articles) return;
   const data1 = allArticle.articles.slice(0, 2);
   const data2 = allArticle.articles.slice(2, 5);
-  const data3 = allArticle.articles.slice(5, 10);
+  const data3 = allArticle.articles.slice(5, 15);
   const now = new Date();
   return (
     <div className="py-10">
@@ -28,6 +28,7 @@ const HomeView = async () => {
           </div>
         )}
       </div>
+
       <div className="mb-[30px] overflow-x-scroll">
         <div className="pb-8 w-fit flex gap-x-8 ">
           {data2 &&
