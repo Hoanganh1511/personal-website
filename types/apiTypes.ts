@@ -57,6 +57,7 @@ export interface IArticle extends Base {
   _id: string;
   title: string;
   hashtag: string;
+  categories: ICategory[];
   _updatedAt: string;
   slug: Slug;
 }

@@ -8,13 +8,13 @@ import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 const HomeView = async () => {
   const allArticle = await getAllArticle({ limit: 15 });
   if (!allArticle.articles) return;
-  const data1 = allArticle.articles.slice(0, 2);
-  const data2 = allArticle.articles.slice(2, 5);
-  const data3 = allArticle.articles.slice(5, 15);
-  const now = new Date();
+  const data1 = allArticle.articles;
+  // const data2 = allArticle.articles.slice(2, 5);
+  // const data3 = allArticle.articles.slice(5, 15);
+  console.log(data1[0]);
   return (
-    <div className="py-10">
-      <div className="mb-[30px]">
+    <div className="py-10 pr-6">
+      {/* <div className="mb-[30px]">
         {data1.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-2 gap-x-[16px] gap-y-[32px]">
             {data1.map((singleArticle, idx) => (
@@ -27,9 +27,9 @@ const HomeView = async () => {
             <p>Không có nội dung trùng khớp!</p>
           </div>
         )}
-      </div>
+      </div> */}
 
-      <div className="mb-[30px] overflow-x-scroll">
+      {/* <div className="mb-[30px] overflow-x-scroll">
         <div className="pb-8 w-fit flex gap-x-8 ">
           {data2 &&
             data2.length > 0 &&
@@ -68,7 +68,6 @@ const HomeView = async () => {
                       </div>
                       <div className="w-[48px] h-[48px] rounded-full flex items-center justify-center bg-[hsla(0,0%,100%,.4)] hover:bg-[hsla(0,0%,100%,.6)] cursor-pointer duration-300">
                         <FaRegBookmark className="text-white text-[21px]" />
-                        {/* <FaBookmark className="text-white text-[21px]" /> */}
                       </div>
                     </div>
                   </div>
@@ -81,39 +80,55 @@ const HomeView = async () => {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
       <div>
-        <div className="flex flex-col gap-y-[16px]">
-          {data3 &&
-            data3.length > 0 &&
-            data3.map((singleArticle, idx) => (
+        <div className="grid grid-cols-12 gap-x-[20px] gap-y-[16px]">
+          {data1 &&
+            data1.length > 0 &&
+            data1.map((singleArticle, idx) => (
               <div
                 key={singleArticle._id}
-                className="group relative flex px-[24px] py-[28px] bg-white hover:bg-gray-50/80 rounded-[16px] border-[2px] border-transparent border-b-[#dedede]"
+                className="group card-photo relative col-span-3 flex flex-col px-[22px] py-[24px] bg-white rounded-[16px] border-[2px] border-transparent border-b-[#dedede]"
               >
                 <Link
                   href={`/blog/${singleArticle._id}`}
-                  className="relative w-[318px] h-[178px] mr-[24px] rounded-[8px] overflow-hidden"
+                  className="relative w-full h-[178px] mr-[24px] rounded-[8px] overflow-hidden"
                 >
                   <Image
                     src={urlFor(singleArticle.mainImage).url()}
                     alt=""
                     fill
+                    className="group-hover:scale-[1.05] duration-500"
                   />
                 </Link>
-                <div className="flex-1 flex flex-col justify-center">
+                <div className="flex-1 flex flex-col">
                   <div className="flex flex-col gap-y-[12px]">
                     <a
                       href={`/blog/${singleArticle._id}`}
-                      className="text-[20px] leading-[24px] font-bold font-poppins text-[#292929] hover:underline"
+                      className="mt-4 text-[20px] leading-[24px] font-bold font-poppins text-[#292929] hover:underline"
                     >
                       {singleArticle.title}
                     </a>
-                    <p className="line-clamp-2 text-black/80 text-[14px] leading-[22px] font-poppins">
+                    <p className=" line-clamp-2 text-black/80 text-[14px] leading-[22px] font-poppins italic">
                       {singleArticle.sapo}
                     </p>
                   </div>
-                  <div className="flex">
+                  <div className="mt-4 flex-1 flex flex-col justify-end">
+                    <div className="flex gap-2 flex-wrap">
+                      {singleArticle.categories?.map((category, idx) => {
+                        return (
+                          <div
+                            key={category._id}
+                            className="px-[10px] outline outline-[1px] outline-black/30 rounded-[5px] shadow-[3px_3px_black] cursor-pointer hover:bg-black/5 hover:underline duration-200"
+                          >
+                            <span className="text-[12px] font-medium">
+                              {" "}
+                              {category.title}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
                     <div className="flex items-center mt-[14px]">
                       <Link
                         href={`/blog/${singleArticle._id}`}

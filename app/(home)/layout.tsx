@@ -18,10 +18,10 @@ export default function RootLayout({
         <div className="w-[20%]">
           <LeftSidebar />
         </div>
-        <div className="w-[55%]">{children}</div>
-        <div className="w-[20%]">
+        <div className="w-[80%]">{children}</div>
+        {/* <div className="w-[20%]">
           <RightSidebar />
-        </div>
+        </div> */}
       </div>
     </div>
   );

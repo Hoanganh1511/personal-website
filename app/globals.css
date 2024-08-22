@@ -86,3 +86,9 @@ html {
 .custom-cursor {
   cursor: url(/images/link.cur), auto;
 }
+
+/* delete */
+.card-photo {
+  box-shadow: 3px 3px black;
+  border: 2px solid black;
+}
