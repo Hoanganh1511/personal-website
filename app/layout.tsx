@@ -9,17 +9,17 @@ import Footer from "@/components/Footer";
 import TopBanner from "@/components/layout/TopBanner";
 
 const poppinsVN = localFont({
-  src: "./Poppins-Light.otf",
+  src: "./fonts/Poppins-Light.otf",
   display: "swap",
   variable: "--font-poppins",
 });
 const poppinsVN_Medium = localFont({
-  src: "./Poppins-Medium.otf",
+  src: "./fonts/Poppins-Medium.otf",
   display: "swap",
   variable: "--font-poppins-medium",
 });
 const poppinsVN_Bold = localFont({
-  src: "./Poppins-Bold.otf",
+  src: "./fonts/Poppins-Bold.otf",
   display: "swap",
   variable: "--font-poppins-bold",
 });
