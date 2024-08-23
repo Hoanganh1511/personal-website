@@ -1,4 +1,5 @@
 import { getAllArticle } from "@/actions/get-posts";
+import Expandable from "@/components/animate/Expandable";
 import LatestCard from "@/components/listing/LatestCard";
 import CategoryCard from "@/components/ui/CategoryCard";
 import urlFor from "@/libs/urlFor";
@@ -10,12 +11,11 @@ const HomeView = async () => {
   const allArticle = await getAllArticle({ limit: 50 });
   if (!allArticle.articles) return;
   const data1 = allArticle.articles;
-  // const data2 = allArticle.articles.slice(2, 5);
-  // const data3 = allArticle.articles.slice(5, 15);
   return (
     <div className="py-10 pr-6">
       <div>
-        <div className="grid grid-cols-12 gap-x-[24px] gap-y-[24px]">
+        <Expandable />
+        <div className="mt-6 grid grid-cols-12 gap-x-[24px] gap-y-[24px]">
           {data1 &&
             data1.length > 0 &&
             data1.map((singleArticle, idx) => (
