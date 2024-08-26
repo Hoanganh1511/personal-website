@@ -1,10 +1,10 @@
 import ArticleCard from "@/components/ProductCard/ArticleCard";
 import { IArticle } from "@/types/apiTypes";
 
-interface HitsSectionProps {
+interface ArticlesSectionProps {
   articles: IArticle[];
 }
-const HitsSection = ({ articles }: HitsSectionProps) => {
+const ArticlesSection = ({ articles }: ArticlesSectionProps) => {
   if (!articles.length) {
     return <p className="text-center">No results for this query!</p>;
   }
@@ -17,4 +17,4 @@ const HitsSection = ({ articles }: HitsSectionProps) => {
   );
 };
 
-export default HitsSection;
+export default ArticlesSection;

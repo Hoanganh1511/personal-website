@@ -1,7 +1,7 @@
 import { getArticlesByCategory } from "@/actions/get-posts";
 import { SearchParamsType } from "@/types";
 import HeroSection from "./HeroSection";
-import HitsSection from "../Listing/HitsSection";
+import ArticlesSection from "../Listing/ArticlesSection";
 import { notFound } from "next/navigation";
 
 interface CategoryViewProps {
@@ -17,12 +17,12 @@ const CategoryView = async ({
   });
   if (!categoryData) return notFound();
   return (
-    <div className="py-12">
+    <div className="pb-12">
       <HeroSection
         title={categoryData.title}
         description={categoryData.description}
       />
-      <HitsSection articles={categoryData.articles} />
+      <ArticlesSection articles={categoryData.articles} />
     </div>
   );
 };

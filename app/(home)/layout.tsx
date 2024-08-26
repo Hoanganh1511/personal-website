@@ -14,14 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <div className="bg-white">
-      <div className="flex justify-between">
-        <div className="w-[20%]">
+      <div className="flex px-[50px] pt-[40px]">
+        <div className="w-[25%]">
           <LeftSidebar />
         </div>
-        <div className="w-[80%]">{children}</div>
-        {/* <div className="w-[20%]">
-          <RightSidebar />
-        </div> */}
+        <div className="w-[75%]">{children}</div>
       </div>
     </div>
   );

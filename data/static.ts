@@ -55,13 +55,17 @@ export const LIST_CONCEPT = [
     title: "Form Handling",
     tag: "form-handling",
   },
+  // {
+  //   title: "Client State Management",
+  //   tag: "client-state-management",
+  // },
+  // {
+  //   title: "Server State Management",
+  //   tag: "server-state-management",
+  // },
   {
-    title: "Client State Management",
-    tag: "client-state-management",
-  },
-  {
-    title: "Server State Management",
-    tag: "server-state-management",
+    title: "PWA",
+    tag: "pwa",
   },
   {
     title: "Styles",

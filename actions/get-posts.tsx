@@ -5,7 +5,9 @@ import { groq } from "next-sanity";
 export const ITEMS_PER_PAGE = 6;
 interface IParams {
   category?: string;
+  limit?: number;
 }
+
 const getAllArticle = async (params: { limit?: number }) => {
   const querySanity = groq`*[_type=="post"] ${params.limit ? `[0...${params.limit}]` : ""} {
           ...,
@@ -19,7 +21,7 @@ const getAllArticle = async (params: { limit?: number }) => {
   };
 };
 const getArticlesByCategory = async (params: IParams) => {
-  const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current]{
+  const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current] ${params.limit ? `[0...${params.limit}]` : ""}{
           ...,
           author->,
           categories[]->,

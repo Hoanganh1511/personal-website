@@ -29,7 +29,7 @@ const Navbar = () => {
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   // backdrop-blur-[20px]
   return (
-    <nav className="z-10 w-full mx-auto  sticky top-0 bg-white  shadow-[0px_2px_black]">
+    <nav className="z-10 w-full mx-auto  sticky top-0 bg-white border-b-[2px] border-black/40">
       <div className="h-[60px] max-w-full px-[20px] mx-auto flex justify-between items-center">
         <div className="w-[20%]">
           <Link href="/" className="text-primary text-[24px] font-extrabold">
@@ -109,7 +109,7 @@ const SearchDrawer = () => {
   return (
     <div
       ref={refDivSearch}
-      className={`fixed  ${isShowSearchDrawer ? "top-0" : "-top-[600px]"} left-0 w-full h-auto min-h-[500px] duration-[400ms] bg-white shadow-2xl`}
+      className={`fixed  ${isShowSearchDrawer ? "top-0" : "-top-[600px]"} left-0 w-full h-auto min-h-[500px] duration-[400ms] bg-white`}
     >
       <button onClick={toggleSearchDrawer} className="absolute top-8 right-20">
         <CloseIcon />
