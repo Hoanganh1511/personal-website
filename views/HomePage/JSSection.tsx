@@ -13,13 +13,11 @@ const JSSection = async () => {
     return <p>No results for this category</p>;
   }
   return (
-    <div className="mb-[40px]">
-      <div>
-        <div className="w-fit  rounded-md">
-          <span className="font-medium text-[32px] text-black">JavaScript</span>
-        </div>
-        <ArticlesGrid articles={articles} />
+    <div className="">
+      <div className="w-fit  rounded-md">
+        <span className="font-medium text-[32px] text-black">JavaScript</span>
       </div>
+      <ArticlesGrid articles={articles} />
     </div>
   );
 };

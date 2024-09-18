@@ -45,9 +45,11 @@ const config: Config = {
         "xanh-mono": ["var(--font-xanh-mono)"],
       },
       fontSize: {
-        sm: "12px",
-        base: "14px",
-        xl: "16px",
+        sm: "14px",
+        base: "16px",
+        xl: "18px",
+        "2xl": "20px",
+        "3xl": "22px",
       },
       animation: {},
       colors: {

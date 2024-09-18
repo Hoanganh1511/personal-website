@@ -24,15 +24,16 @@ const ArticlesGrid = async ({ articles }: IParams) => {
 };
 
 export default ArticlesGrid;
+
 function ArticleCard({ article }: { article: IArticle }) {
   return (
     <div
       key={article._id}
-      className="group relative col-span-3 flex flex-col  bg-white rounded-[8px] border-[2px] border-transparent"
+      className="group relative col-span-3 xl:col-span-3 flex flex-col  bg-white rounded-[4px] border-[2px] border-transparent"
     >
       <Link
         href={`/blog/${article._id}`}
-        className="relative w-full md:h-[178px] xl:h-[200px] mr-[24px] rounded-[16px] overflow-hidden"
+        className="relative w-full md:h-[178px] xl:h-[200px] mr-[24px] rounded-[4px] overflow-hidden"
       >
         <Image
           src={urlFor(article.mainImage).url()}

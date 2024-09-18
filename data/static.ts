@@ -1,6 +1,7 @@
 import { PiSuitcaseSimpleFill, PiCoffeeFill } from "react-icons/pi";
 import { FaLightbulb, FaReact } from "react-icons/fa";
 import { FaBellConcierge } from "react-icons/fa6";
+
 import { SiNextdotjs } from "react-icons/si";
 import { SiRedux } from "react-icons/si";
 import { FaNode } from "react-icons/fa";
@@ -36,6 +37,10 @@ export const LEFT_SIDE_BAR = [
 ];
 export const LIST_CONCEPT = [
   {
+    title: "Web Development",
+    tag: "web-development",
+  },
+  {
     title: "React",
     tag: "react",
   },
@@ -52,28 +57,12 @@ export const LIST_CONCEPT = [
     tag: "graph-ql",
   },
   {
-    title: "Form Handling",
-    tag: "form-handling",
-  },
-  // {
-  //   title: "Client State Management",
-  //   tag: "client-state-management",
-  // },
-  // {
-  //   title: "Server State Management",
-  //   tag: "server-state-management",
-  // },
-  {
-    title: "PWA",
-    tag: "pwa",
+    title: "AWS",
+    tag: "aws",
   },
   {
-    title: "Styles",
-    tag: "styles",
-  },
-  {
-    title: "Agile Scrum",
-    tag: "agile-scrum",
+    title: "NestJS",
+    tag: "nestjs",
   },
 ];
 // https://flaviocopes.com/tags/cli/

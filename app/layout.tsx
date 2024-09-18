@@ -3,10 +3,10 @@ import localFont from "next/font/local";
 import { Lexend, Lora, IBM_Plex_Sans, Xanh_Mono } from "next/font/google";
 
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import { Providers } from "@/redux/provider";
 import Footer from "@/components/Footer";
 import TopBanner from "@/components/layout/TopBanner";
+import Header from "@/components/Header";
 
 const poppinsVN = localFont({
   src: "./fonts/Poppins-Light.otf",
@@ -63,7 +63,7 @@ export default function RootLayout({
       >
         <Providers>
           {/* <TopBanner /> */}
-          <Navbar />
+          <Header />
           {children}
           <Footer />
         </Providers>
