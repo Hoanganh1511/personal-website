@@ -47,8 +47,8 @@ const config: Config = {
       fontSize: {
         sm: "12px",
         base: "16px",
-        xl: "20px",
-        "2xl": "24px",
+        xl: "24px",
+        "2xl": "30px",
         "3xl": "36px",
       },
       animation: {},

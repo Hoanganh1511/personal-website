@@ -1,12 +1,12 @@
 import Link from "next/link";
 import React from "react";
-
+import { MdChevronRight } from "react-icons/md";
 const AboutMeSection = () => {
   return (
     <div className="max-w-container-md mx-auto w-full py-12">
       <h1 className="text-white text-3xl font-bold ">Hoàng Tuấn Anh</h1>
       <p className="text-primary mt-3">Front End Developer</p>
-      <hr className="my-12 border-[rgba(255,255,255,0.06)]" />
+      <hr className="my-10 border-[rgba(255,255,255,0.06)]" />
       <section>
         <h2 className="text-2xl font-bold underline text-white/80">Work</h2>
         <p className="mt-3  text-white/85 indent-[16px] leading-[25px] duration-300">
@@ -22,12 +22,12 @@ const AboutMeSection = () => {
         </p>
         <Link
           href="/projects"
-          className="mt-6 mx-auto block w-fit py-3 px-5 border-primary border-[1px] hover:underline rounded-[4px] hover: duration-100"
+          className="mt-8 mx-auto flex items-center w-fit py-2 px-5 border-primary text-black/90 font-semibold bg-[#D6C0B3] border-[1px] hover:underline rounded-[4px] hover: duration-100"
         >
-          My Portfolio
+          My Portfolio <MdChevronRight className="mt-[4px] text-[20px]" />
         </Link>
       </section>
-      <hr className="my-12 border-[rgba(255,255,255,0.06)]" />
+      <hr className="my-10 border-[rgba(255,255,255,0.06)]" />
       <section>
         <h2 className="text-2xl font-bold underline text-white/80">Bio</h2>
         <div className="py-4">

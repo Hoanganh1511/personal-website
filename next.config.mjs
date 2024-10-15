@@ -7,6 +7,7 @@ const nextConfig = {
       "cdnmedia.vtcgame.vn",
       "phidoi.vtcgame.vn",
       "cdn-icons-png.flaticon.com",
+      "pbs.twimg.com",
     ],
   },
 };
