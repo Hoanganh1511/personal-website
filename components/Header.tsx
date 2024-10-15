@@ -29,8 +29,8 @@ const Header = () => {
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   // backdrop-blur-[20px]
   return (
-    <nav className="z-10 w-full mx-auto  sticky top-0 bg-white border-b-[2px] border-black/40">
-      <div className="h-[60px] max-w-full px-[20px] mx-auto flex justify-between items-center">
+    <nav className="z-10 w-full mx-auto  sticky top-0  border-b-[2px] border-black/40">
+      <div className="h-[60px] max-w-container-xl px-[20px] mx-auto flex justify-between items-center">
         <div className="w-[20%]">
           <Link href="/" className="text-primary text-[24px] font-extrabold">
             Tuấn Anh
@@ -43,9 +43,7 @@ const Header = () => {
               className={`relative text-primary text-[15px] font-normal  `}
             >
               <TbHomeFilled
-                className={`text-[22px] ${
-                  pathname === "/" ? "text-custom-blue" : "text-black"
-                }`}
+                className={`text-[22px] ${pathname === "/" ? "" : ""}`}
               />
             </Link>
           </li>
@@ -68,17 +66,6 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <div className="w-[20%]">
-          <motion.button
-            whileHover={{ scale: 1.2 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
-            className="group mx-auto w-[36px] h-[36px] bg-black/80 rounded-[4px] flex items-center justify-center"
-            onClick={toggleDrawer}
-          >
-            <FiSearch className="text-white text-[22px]" />
-          </motion.button>
-        </div>
       </div>
       <SearchDrawer />
     </nav>

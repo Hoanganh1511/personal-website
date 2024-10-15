@@ -12,14 +12,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="bg-white">
-      <div className="flex px-[50px] pt-[40px]">
-        <div className="w-[22%]">
-          <LeftSidebar />
-        </div>
-        <div className="w-[78%]">{children}</div>
-      </div>
-    </div>
-  );
+  return <div className="">{children}</div>;
 }

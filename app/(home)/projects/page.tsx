@@ -1,10 +1,10 @@
 import { getAllArticle } from "@/actions/get-posts";
-import AboutMeSection from "@/views/HomePage/AboutMeSection";
+import ProjectsSection from "@/views/HomePage/ProjectsSection";
 
 export default async function Home() {
   return (
     <div className="space-y-12">
-      <AboutMeSection />
+      <ProjectsSection />
     </div>
   );
 }
