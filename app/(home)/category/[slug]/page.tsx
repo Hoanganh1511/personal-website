@@ -1,6 +1,6 @@
 import CategoryView from "@/views/Category/CategoryView";
 import { SearchParamsType } from "@/types";
-export async function CategoryPage({
+async function CategoryPage({
   params,
   searchParams,
 }: {
