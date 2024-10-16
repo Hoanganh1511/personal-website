@@ -8,33 +8,39 @@ import { formatDateTime2 } from "@/utils/helper";
 const BlogDetail = async ({ params }: { params: { id: string } }) => {
   const post = await getDetailPost(params.id);
   return (
-    <div className="relative p-[20px] pt-[20px]">
-      <div className="max-w-container-sm mx-auto">
-        <div className="my-6 ">
-          <span className="text-center text-[13px] block uppercase tracking-[1.75px] text-blue-600">
-            Web Development
-          </span>
-        </div>
-        <div className=" text-[48px] text-[rgba(0,0,0,.87)] leading-normal font-poppins font-semibold text-center mb-4 ">
+    <div className="relative px-[20px] ">
+      <div className="max-w-full mx-auto">
+        <div className=" text-[32px] text-[#E3E3E3] leading-normal font-poppins font-bold text-left mb-4 ">
           {post.title}
         </div>
-        <div className="w-fit mx-auto ">
-          <span className="inline-block uppercase text-[14px] text-center text-[#6E7976]">
-            {formatDateTime2(post._createdAt)}
-          </span>
-          <span className="inline-block mx-3 text-[#6E7976]">|</span>
-          <span className="text-[14px] uppercase text-[#6E7976]">
-            Written by Tuấn Anh
-          </span>
+        <div className="text-[14px] text-[#E3E3E3] mb-5">
+          September 6, 2022 · 5 min read
         </div>
-        <div className="relative w-full h-[200px] my-8">
+        <div className="flex items-start">
+          <Image
+            src="/images/avatar.jpg"
+            width={48}
+            height={48}
+            alt="avatar"
+            className="rounded-full size-[54px] object-cover"
+          />
+          <div className="ml-[12px] flex flex-col">
+            <span className="text-[14px] uppercase text-[#0080a3] font-bold">
+              Tuấn Anh
+            </span>
+            <span className="uppercase text-[14px] text-[#6E7976]">
+              {formatDateTime2(post._createdAt)}
+            </span>
+          </div>
+        </div>
+        {/* <div className="relative w-full h-[200px] my-8">
           <Image
             src={urlFor(post.mainImage).url()}
             alt=""
             fill
             className="object-contain object-center rounded-md"
           />
-        </div>
+        </div> */}
         <PortableText value={post.body} components={RichTextComponent} />
       </div>
     </div>

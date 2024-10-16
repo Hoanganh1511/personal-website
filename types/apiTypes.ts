@@ -36,6 +36,7 @@ export interface ICategory {
   _id: string;
   tag: ITag;
   title: string;
+  description: string;
   _updatedAt: string;
 }
 

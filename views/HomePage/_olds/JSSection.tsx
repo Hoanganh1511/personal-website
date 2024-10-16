@@ -1,4 +1,4 @@
-import { getAllCategories } from "@/actions/get-categories";
+import { getAllCategories } from "@/actions/sanity-fetch";
 import { getArticlesByCategory } from "@/actions/get-posts";
 import Expandable from "@/components/animate/Expandable";
 import ArticlesGrid from "@/components/Grid";

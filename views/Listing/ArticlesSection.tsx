@@ -9,11 +9,11 @@ const ArticlesSection = ({ articles }: ArticlesSectionProps) => {
     return <p className="text-center">No results for this query!</p>;
   }
   return (
-    <div className="grid w-full overflow-hidden grid-cols-[repeat(_auto-fill,minmax(140px,1fr)_)] items-start gap-[40px] gap-y-8 md:grid-cols-[repeat(_auto-fill,minmax(200px,2fr)_)] xl:grid-cols-[repeat(_auto-fill,minmax(280px,4fr)_)]">
+    <ul className="flex flex-col gap-y-4">
       {articles.map((singleArticle, idx) => (
         <ArticleCard article={singleArticle} key={singleArticle._id} />
       ))}
-    </div>
+    </ul>
   );
 };
 

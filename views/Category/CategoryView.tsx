@@ -22,7 +22,7 @@ const CategoryView = async ({
         title={categoryData.title}
         description={categoryData.description}
       />
-      <ArticlesSection articles={categoryData.articles} />
+      <ArticlesSection articles={categoryData.data} />
     </div>
   );
 };

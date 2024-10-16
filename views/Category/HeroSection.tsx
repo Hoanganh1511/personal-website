@@ -6,17 +6,13 @@ interface HeroSectionProps {
 const HeroSection = ({ title, description }: HeroSectionProps) => {
   return (
     <div>
-      <div className="relative p-[20px] pt-[20px]">
-        <div className="max-w-container-lg mx-auto">
-          <div className="w-full h-[80px] mb-[40px] flex items-center justify-center">
-            <div className="flex flex-col">
-              <div className="mb-4 text-[30px] font-bold font-lexend text-center">
-                {title}
-              </div>
-              <div className="mt-4">
-                <p className="text-center">{description}</p>
-              </div>
-            </div>
+      <div className="relative">
+        <div className="w-full h-[80px] mb-[40px] ">
+          <div className=" text-[32px] text-[#E3E3E3] leading-normal font-poppins font-bold text-left mb-4 ">
+            📨 {title}
+          </div>
+          <div className="mt-4">
+            <p className="text-primary">{description}</p>
           </div>
         </div>
       </div>

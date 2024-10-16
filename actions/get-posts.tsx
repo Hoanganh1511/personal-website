@@ -17,10 +17,11 @@ const getAllArticle = async (params: { limit?: number }) => {
 
   const data = await client.fetch(querySanity);
   return {
-    articles: data as IArticle[],
+    data: data as IArticle[],
   };
 };
 const getArticlesByCategory = async (params: IParams) => {
+  console.log(params.category);
   const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current] ${params.limit ? `[0...${params.limit}]` : ""}{
           ...,
           author->,
@@ -33,13 +34,13 @@ const getArticlesByCategory = async (params: IParams) => {
   });
   if (!data.length) {
     return {
-      articles: [],
+      data: [],
       title: "",
       description: "",
     };
   }
   return {
-    articles: data,
+    data: data as IArticle[],
     title: data[0].category.title,
     description: data[0].category.description,
   };

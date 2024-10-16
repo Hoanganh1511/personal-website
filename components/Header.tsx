@@ -18,6 +18,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { CiLinkedin } from "react-icons/ci";
 import { FiSearch } from "react-icons/fi";
+import { MdArticle } from "react-icons/md";
 import { IoCodeWorkingSharp } from "react-icons/io5";
 const Header = () => {
   const pathname = usePathname();
@@ -54,6 +55,16 @@ const Header = () => {
             >
               <IoCodeWorkingSharp
                 className={`text-[20px] ${pathname === "/projects" ? " text-black/65" : ""}`}
+              />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/blog"
+              className={`${pathname === "/blog" ? "bg-[#D6C0B3]" : "hover:bg-[#d6c0b31a]"} flex items-center justify-center size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal `}
+            >
+              <MdArticle
+                className={`text-[20px] ${pathname === "/blog" ? " text-black/65" : ""}`}
               />
             </Link>
           </li>
