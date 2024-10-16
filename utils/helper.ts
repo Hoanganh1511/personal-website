@@ -7,7 +7,11 @@ export const formatDateTime = (dateInput: string) => {
 };
 
 export const formatDateTime2 = (dateInput: string) => {
-  const options = { year: "numeric", month: "long", day: "numeric" };
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   return new Date(dateInput).toLocaleDateString("en-US", options);
 };
 export const subtractDate = (dateFrom: string, dateTo: string) => {
