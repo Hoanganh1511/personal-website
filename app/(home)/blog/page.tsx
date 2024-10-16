@@ -1,4 +1,4 @@
-import { getAllArticle, getArticlesByCategory } from "@/actions/get-posts";
+import { getArticlesByCategory } from "@/actions/get-posts";
 import React from "react";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiNextdotjs } from "react-icons/si";

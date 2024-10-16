@@ -1,5 +1,3 @@
-import Image from "next/image";
-import urlFor from "@/libs/urlFor";
 import CategoryView from "@/views/Category/CategoryView";
 import { SearchParamsType } from "@/types";
 export async function CategoryPage({
