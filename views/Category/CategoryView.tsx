@@ -5,7 +5,7 @@ import ArticlesSection from "../Listing/ArticlesSection";
 import { notFound } from "next/navigation";
 
 interface CategoryViewProps {
-  params: { slug: string; page?: string };
+  params: { slug: string };
   searchParams?: SearchParamsType;
 }
 const CategoryView = async ({
