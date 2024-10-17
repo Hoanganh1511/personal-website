@@ -25,11 +25,11 @@ const BlogPage = async () => {
   return (
     <>
       <h1 className="text-white text-3xl font-bold ">Blog.</h1>
-      <p className="text-primary mt-3">Musings on React, Next, and more</p>
-      <hr className="my-14 border-[rgba(255,255,255,0.08)]" />
+      <p className="text-white/70 mt-3">Musings on React, Next, and more</p>
+      <hr className="my-10 border-[rgba(255,255,255,0.08)]" />
       <div className="mb-10">
-        <h2 className="text-[17px] font-semibold text-[#0080a3] mb-2">
-          <span className="text-[18px]">⚛️</span> React in 2024
+        <h2 className="text-[17px] font-semibold text-[#00c8ff] mb-3">
+          <span className="text-[18px] ">⚛️</span> React in 2024
         </h2>
         <ul className="pl-6">
           {articlesReact &&
@@ -39,7 +39,7 @@ const BlogPage = async () => {
                   📜{" "}
                   <a
                     href={`/blog/${article._id}`}
-                    className="text-[#0080a3]  hover:underline"
+                    className="text-[#00c8ff] font-normal hover:underline"
                   >
                     {article.title}
                   </a>
@@ -49,8 +49,9 @@ const BlogPage = async () => {
             ))}
         </ul>
       </div>
+      <hr className="my-10 border-[rgba(255,255,255,0.08)]" />
       <div className="mb-10">
-        <h2 className="text-[17px] font-semibold text-[#0080a3] mb-2">
+        <h2 className="text-[17px] font-semibold text-[#00c8ff] mb-3">
           <SiNextdotjs className="inline-block text-[18px] text-white mr-[2px] mb-[1px]" />{" "}
           Next in 2024
         </h2>
@@ -59,7 +60,10 @@ const BlogPage = async () => {
             articlesNext.map((article, id) => (
               <li key={id} className="mb-3">
                 <p className="text-white/75">
-                  <a href="" className="text-[#0080a3]  hover:underline">
+                  <a
+                    href=""
+                    className="text-[#00c8ff] font-normal hover:underline"
+                  >
                     {article.title}
                   </a>
                   : &nbsp;{article.sapo}
@@ -68,8 +72,9 @@ const BlogPage = async () => {
             ))}
         </ul>
       </div>
+      <hr className="my-10 border-[rgba(255,255,255,0.08)]" />
       <div className="">
-        <h2 className="text-[17px] font-semibold text-[#0080a3] mb-2">
+        <h2 className="text-[17px] font-semibold text-[#00c8ff] mb-3">
           <IoLogoJavascript className="inline-block text-[18px] text-[#F0DB4F] mr-[2px] mb-[1px]" />{" "}
           Javascript in 2024
         </h2>
@@ -78,7 +83,10 @@ const BlogPage = async () => {
             articlesJavascript.map((article, id) => (
               <li key={id} className="mb-3">
                 <p className="text-white/75">
-                  <a href="" className="text-[#0080a3]  hover:underline">
+                  <a
+                    href=""
+                    className="text-[#00c8ff] font-normal hover:underline"
+                  >
                     {article.title}
                   </a>
                   : &nbsp;{article.sapo}
@@ -87,6 +95,7 @@ const BlogPage = async () => {
             ))}
         </ul>
       </div>
+      {/* <hr className="my-10 border-[rgba(255,255,255,0.08)]" /> */}
     </>
   );
 };

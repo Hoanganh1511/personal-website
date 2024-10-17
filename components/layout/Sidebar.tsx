@@ -14,8 +14,8 @@ const Sidebar = ({ categories }: { categories: ICategory[] }) => {
         categories.map((category, idx) => (
           <li key={idx} className="mb-2">
             <Link
-              href={`/blog/category/${category.tag.current}`}
-              className={`${pathname.split("/")[3] === category.tag.current ? "text-[#00c8ff]" : "text-primary hover:text-[#0080a3]"}  duration-300`}
+              href={`/category/${category.tag.current}`}
+              className={`${pathname.split("/")[2] === category.tag.current ? "text-[#00c8ff]" : "text-primary hover:text-[#0080a3]"}  duration-300`}
             >
               📨 {category.description}
             </Link>
