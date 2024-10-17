@@ -31,7 +31,7 @@ const Header = () => {
   // backdrop-blur-[20px]
   return (
     <nav className="z-10 w-full mx-auto  sticky top-0 backdrop-blur-3xl border-b-[2px] border-black/40">
-      <div className="h-[60px] max-w-container-lg  mx-auto flex justify-between items-center">
+      <div className="h-[60px] max-w-container-xl  mx-auto flex justify-between items-center">
         <div className="w-[20%]">
           <Link href="/" className="text-white/80 text-[24px] font-extrabold">
             Tuấn Anh
