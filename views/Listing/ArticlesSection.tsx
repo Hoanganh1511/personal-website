@@ -9,7 +9,7 @@ const ArticlesSection = ({ articles }: ArticlesSectionProps) => {
     return <p className="text-center">No results for this query!</p>;
   }
   return (
-    <ul className="flex flex-col gap-y-4">
+    <ul className="flex flex-col gap-y-2">
       {articles.map((singleArticle, idx) => (
         <ArticleCard article={singleArticle} key={singleArticle._id} />
       ))}

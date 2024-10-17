@@ -8,10 +8,9 @@
     font-family: "AmazonEmber";
   }
 }
-:root {
-}
+
 body {
-  background: black;
+  background: #282c34;
   color: white;
 }
 html {

@@ -12,7 +12,7 @@ const HeroSection = ({ title, description }: HeroSectionProps) => {
             📨 {title}
           </div>
           <div className="mt-4">
-            <p className="text-primary">{description}</p>
+            <p className="text-white/75">{description}</p>
           </div>
         </div>
       </div>
