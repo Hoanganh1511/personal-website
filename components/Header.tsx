@@ -30,28 +30,28 @@ const Header = () => {
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   // backdrop-blur-[20px]
   return (
-    <nav className="z-10 w-full mx-auto  sticky top-0 backdrop-blur-3xl border-b-[2px] border-black/40">
-      <div className="h-[60px] max-w-container-xl  mx-auto flex justify-between items-center">
-        <div className="w-[20%]">
+    <nav className="z-10 w-full mx-auto  sticky top-0 backdrop-blur-2xl ">
+      <div className="max-w-container-md py-6 mx-auto flex justify-center items-center">
+        {/* <div className="w-[20%]">
           <Link href="/" className="text-white/80 text-[24px] font-extrabold">
             Tuấn Anh
           </Link>
-        </div>
-        <ul className="w-[400px] flex gap-4 items-center justify-end h-auto ">
+        </div> */}
+        <ul className="w-fit flex gap-4 items-center justify-center  border-[1px] border-white/30 rounded-[8px] py-[6px] px-[6px]">
           <li>
             <Link
               href="/"
-              className={`${pathname === "/" ? "bg-[#D6C0B3]" : "hover:bg-[#d6c0b31a]"} flex items-center justify-center size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal  `}
+              className={`${pathname === "/" ? "bg-[rgba(149,149,149,0.3)]" : "hover:bg-[#d6c0b31a]"} flex items-center justify-center  size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal  `}
             >
               <TbHomeFilled
-                className={`text-[20px] ${pathname === "/" ? " text-black/65" : ""}`}
+                className={`text-[20px] ${pathname === "/" ? " text-white" : ""}`}
               />
             </Link>
           </li>
           <li>
             <Link
               href="/projects"
-              className={`${pathname === "/projects" ? "bg-[#D6C0B3]" : "hover:bg-[#d6c0b31a]"} flex items-center justify-center size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal `}
+              className={`${pathname === "/projects" ? "bg-[#D6C0B3]" : "hover:bg-[#d6c0b31a]"} flex items-center justify-center  size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal `}
             >
               <IoCodeWorkingSharp
                 className={`text-[20px] ${pathname === "/projects" ? " text-black/65" : ""}`}
@@ -61,20 +61,11 @@ const Header = () => {
           <li>
             <Link
               href="/blog"
-              className={`${pathname === "/blog" ? "bg-[#D6C0B3]" : "hover:bg-[#d6c0b31a]"} flex items-center justify-center size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal `}
+              className={`${pathname === "/blog" ? "bg-[#D6C0B3]" : "hover:bg-[#d6c0b31a]"} flex items-center justify-center  size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal `}
             >
               <MdArticle
                 className={`text-[20px] ${pathname === "/blog" ? " text-black/65" : ""}`}
               />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="github.com/hoanganh1511"
-              target="_blank"
-              className={`flex items-center justify-center size-[40px] rounded-[4px]  duration-200 relative text-white/80 text-[15px] font-normal `}
-            >
-              <FiGithub className={`text-[20px]`} />
             </Link>
           </li>
         </ul>
