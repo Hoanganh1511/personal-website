@@ -116,6 +116,7 @@ const AboutMeSection = () => {
             { title: "PostgreQL" },
             { title: "Docker" },
             { title: "Machine Learning" },
+            { title: "Foundation" },
           ].map((item, idx) => (
             <li key={idx} className="">
               <div className="text-[13px] py-[4px] px-[10px] border-[1px] border-white/25 rounded-[4px] bg-white/5 hover:bg-white/10 cursor-pointer duration-150">
