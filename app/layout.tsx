@@ -1,5 +1,5 @@
 import { GoogleTagManager } from "@next/third-parties/google";
-
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/redux/provider";
 
