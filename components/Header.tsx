@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { usePathname } from "next/navigation";
 import { useDebounceValue, useOnClickOutside } from "usehooks-ts";
 import { TbHomeFilled } from "react-icons/tb";
@@ -10,13 +11,7 @@ import appSlice from "@/app/appSlice";
 import { RootState } from "@/redux/configure-store";
 import CloseIcon from "./icons/CloseIcon";
 import { categoryData } from "@/data";
-import FacebookIcon from "./icons/FacebookIcon";
-import InstagramIcon from "./icons/InstagramIcon";
-import LinkedInIcon from "./icons/LinkedInIcon";
-import { DiGithubBadge } from "react-icons/di";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
-import { CiLinkedin } from "react-icons/ci";
+
 import { FiSearch } from "react-icons/fi";
 import { MdArticle } from "react-icons/md";
 import { IoCodeWorkingSharp } from "react-icons/io5";
@@ -67,6 +62,15 @@ const Header = () => {
                 className={`text-[20px] ${pathname === "/blog" ? " text-black/65" : ""}`}
               />
             </Link>
+          </li>
+          <li>
+            <button
+              onClick={() =>
+                sendGTMEvent({ event: "buttonClicked", value: "xyz" })
+              }
+            >
+              Test Click
+            </button>
           </li>
         </ul>
       </div>

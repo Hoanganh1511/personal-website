@@ -2,7 +2,6 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/redux/provider";
-
 import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({
