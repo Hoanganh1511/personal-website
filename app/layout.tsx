@@ -1,12 +1,4 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import {
-  Lexend,
-  Lora,
-  IBM_Plex_Sans,
-  Xanh_Mono,
-  Inter,
-} from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 import "./globals.css";
 import { Providers } from "@/redux/provider";
@@ -31,6 +23,7 @@ export default function RootLayout({
           </Providers>
         </div>
       </body>
+      <GoogleTagManager gtmId="GTM-MB7RCLFS" />
     </html>
   );
 }
