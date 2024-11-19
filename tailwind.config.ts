@@ -8,6 +8,16 @@ const config: Config = {
     "./views/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      screens: {
+        ...defaultTheme.width,
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
+    },
     extend: {
       transitionTimingFunction: {
         "minor-spring": "cubic-bezier(0.18,0.89,0.82,1.04)",
@@ -71,10 +81,11 @@ const config: Config = {
       },
       maxWidth: {
         ...defaultTheme.width,
-        "container-sm": "768px",
-        "container-md": "864px",
-        "container-lg": "1240px",
-        "container-xl": "1440px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "1536": "1536px",
       },
       minWidth: {
         ...defaultTheme.minWidth,

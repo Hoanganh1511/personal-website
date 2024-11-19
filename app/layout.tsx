@@ -1,9 +1,12 @@
 import { GoogleTagManager } from "@next/third-parties/google";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/redux/provider";
-import Header from "@/components/Header";
-const inter = Inter({ subsets: ["latin"] });
+import MainLayout from "@/components/layout/MainLayout";
+const plex_mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -11,15 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <div className="min-h-screen relative bg-gradient-to-tl from-zinc-900 via-zinc-400/10 to-zinc-900 bg-no-repeat">
-          <Providers>
-            {/* <TopBanner /> */}
-            <Header />
-            {children}
-            {/* <Footer /> */}
-          </Providers>
-        </div>
+      <body className={`${plex_mono.className}`}>
+        <Providers>
+          <div className="min-h-screen relative">
+            <MainLayout>{children}</MainLayout>
+          </div>
+        </Providers>
       </body>
       <GoogleTagManager gtmId="GTM-MB7RCLFS" />
     </html>

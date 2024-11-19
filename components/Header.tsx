@@ -63,15 +63,6 @@ const Header = () => {
               />
             </Link>
           </li>
-          <li>
-            <button
-              onClick={() =>
-                sendGTMEvent({ event: "buttonClicked", value: "xyz" })
-              }
-            >
-              Test Click
-            </button>
-          </li>
         </ul>
       </div>
       <SearchDrawer />
@@ -104,56 +95,7 @@ const SearchDrawer = () => {
       ref={refDivSearch}
       className={`fixed  ${isShowSearchDrawer ? "top-0" : "-top-[600px]"} left-0 w-full h-auto min-h-[500px] duration-[400ms] bg-white`}
     >
-      <button onClick={toggleSearchDrawer} className="absolute top-8 right-20">
-        <CloseIcon />
-      </button>
-      <div className="max-w-[740px] mx-auto my-20">
-        <div className="pb-3 border-b border-black/40 flex items-center">
-          <div className="relative flex-1">
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search blogs..."
-              className="text-[36px] font-semibold pr-20 outline-none border-none"
-            />
-            {query && query.length > 0 && (
-              <button
-                onClick={clearQuery}
-                className="text-[13px] uppercase absolute top-1/2 right-4 -translate-y-1/2 hover:text-black/40"
-              >
-                Clear
-              </button>
-            )}
-          </div>
-          <button
-            onClick={() => {}}
-            className="px-4 py-2 border-l border-black/40"
-          >
-            <FiSearch className="hover:opacity-50 text-white" />
-          </button>
-        </div>
-        <div className="mt-12 flex justify-between">
-          <div className="flex gap-12">
-            {categoryData.map((item, idx) => (
-              <div key={idx}>
-                <h2 className="font-bold">{item.categoryTitle}</h2>
-                <ul className="flex flex-col gap-[4px] mt-4">
-                  {item.categoryChilds.map((childItem, childIdx) => (
-                    <li key={childIdx}>
-                      <Link
-                        href={childItem.url}
-                        className="text-[13.5px] hover:text-black/60"
-                      >
-                        {childItem.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      Header
     </div>
   );
 };

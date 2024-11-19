@@ -8,6 +8,7 @@ const nextConfig = {
       "phidoi.vtcgame.vn",
       "cdn-icons-png.flaticon.com",
       "pbs.twimg.com",
+      "avatars.githubusercontent.com",
     ],
   },
 };

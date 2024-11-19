@@ -4,23 +4,31 @@ import { ICategory } from "@/types/apiTypes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { GrCertificate } from "react-icons/gr";
-const Sidebar = ({ categories }: { categories: ICategory[] }) => {
+// { categories }: { categories: ICategory[] }
+const Sidebar = () => {
   const pathname = usePathname();
-
   return (
-    <ul className="sticky top-[110px] duration-500">
-      {categories &&
-        categories.length > 0 &&
-        categories.map((category, idx) => (
-          <li key={idx} className="mb-2">
-            <Link
-              href={`/category/${category.tag.current}`}
-              className={`${pathname.split("/")[2] === category.tag.current ? "text-[#00c8ff]" : "text-primary hover:text-[#0080a3]"}  duration-300`}
-            >
-              📨 {category.description}
-            </Link>
-          </li>
-        ))}
+    <ul className="sticky top-[56px] w-full bg-gray-800 rounded-[8px] overflow-hidden">
+      <li className="">
+        <Link href="/" className="">
+          <div
+            className={`${pathname === "/" ? "bg-white/10" : ""} hover:bg-white/10 duration-200 flex items-center gap-4 p-[16px]`}
+          >
+            <span className="text-[24px]">😵‍💫</span>{" "}
+            <span className="font-bold text-white/85">About</span>
+          </div>
+        </Link>
+      </li>
+      <li className="">
+        <Link href="/blog" className="">
+          <div
+            className={`${pathname === "/blog" ? "bg-white/10" : ""} hover:bg-white/10  duration-200 flex items-center gap-4 p-[16px]`}
+          >
+            <span className="text-[24px]">🗒</span>{" "}
+            <span className="font-bold text-white/85">Blog</span>
+          </div>
+        </Link>
+      </li>
     </ul>
   );
 };
