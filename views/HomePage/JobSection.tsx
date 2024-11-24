@@ -65,16 +65,14 @@ const JobSection = () => {
         <div className="max-w-[50%] w-full p-[8px] rounded-[4px] bg-[#0c2e45]">
           <h3 className="mb-[8px] text-[16px] font-bold">Others</h3>
           <ul className="pl-[6px] flex flex-col gap-y-[4px]">
-            {["AWS (Storage, Deploy, Hosting, Authen...)", "PostgresQL"].map(
-              (repo, idx) => (
-                <li key={idx}>
-                  <div className="flex items-center justify-between">
-                    <p className="text-[16px] font-medium">{repo}</p>
-                    <span>2024 -</span>
-                  </div>
-                </li>
-              )
-            )}
+            {["AWS", "PostgresQL"].map((repo, idx) => (
+              <li key={idx}>
+                <div className="flex items-center justify-between">
+                  <p className="text-[16px] font-medium">{repo}</p>
+                  <span>2024 -</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

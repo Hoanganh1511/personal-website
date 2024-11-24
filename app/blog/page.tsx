@@ -7,31 +7,26 @@ import { SiNextdotjs } from "react-icons/si";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { formatDateTime } from "@/utils/helper";
 import Pagination from "./_components/Pagination";
+// getArticlesByCategory({
+//   category: "next-js",
+//   limit: 3,
+// }),
+// getArticlesByCategory({
+//   category: "javascript",
+//   limit: 3,
+// }),
 const BlogPage = async ({
   searchParams: { page },
 }: {
   searchParams: { page?: string };
 }) => {
-  const [resArticlesReact, resArticlesNext, resArticlesJavascript] =
-    await Promise.all([
-      getArticlesByCategory({
-        category: "react",
-        limit: 3,
-      }),
-      getArticlesByCategory({
-        category: "next-js",
-        limit: 3,
-      }),
-      getArticlesByCategory({
-        category: "javascript",
-        limit: 3,
-      }),
-    ]);
+  const resArticlesReact = await getArticlesByCategory({
+    category: "react",
+    limit: Number(page) || 3,
+  });
+
   const articlesReact = resArticlesReact.data;
-  const articlesNext = resArticlesNext.data;
-  const articlesJavascript = resArticlesJavascript.data;
-  console.log(555, page);
-  if (!articlesReact && !articlesNext) return;
+  if (!articlesReact) return;
   return (
     <div className="">
       <div className="flex flex-col gap-y-[16px]">
