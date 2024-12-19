@@ -10,8 +10,9 @@
 }
 
 body {
-  background: rgba(17, 24, 39, 1);
-  color: white;
+  /* background: rgba(17, 24, 39, 1); */
+  /* background-color: black; */
+  color: black;
 }
 html {
   scroll-behavior: smooth;
@@ -40,4 +41,17 @@ html {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 14px;
   border: 3px solid var(--primary);
+}
+
+.title-separate {
+  position: relative;
+}
+.title-separate::after {
+  position: absolute;
+  content: "";
+  flex: 1;
+  border: 2px solid rgba(60, 60, 59, 1);
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }

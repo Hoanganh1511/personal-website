@@ -46,6 +46,8 @@ const config: Config = {
       fontFamily: {
         lexend: ["var(--font-lexend)"],
         lora: ["var(--font-lora)"],
+        "plex-sans": ["var(--font-plex-sans)"],
+        "plex-mono": ["var(--font-plex-mono)"],
         poppins: ["var(--font-poppins)"],
         "poppins-medium": ["var(--font-poppins-medium)"],
         "poppins-bold": ["var(--font-poppins-bold)"],

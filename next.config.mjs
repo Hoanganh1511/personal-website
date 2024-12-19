@@ -9,6 +9,9 @@ const nextConfig = {
       "cdn-icons-png.flaticon.com",
       "pbs.twimg.com",
       "avatars.githubusercontent.com",
+      "baodienbien.xembao.vn",
+      "cdn-i.vtcnews.vn",
+      "vtcgame.vn",
     ],
   },
 };
