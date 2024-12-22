@@ -27,7 +27,7 @@ const getArticlesByCategory = async (params: IParams) => {
           author->,
           categories[]->,
           "category": *[_type == 'category' && tag.current == $category][0]
-        } | order(_updatedAt desc)`;
+        } | order(_createdAt desc)`;
 
   const data = await client.fetch(querySanity, {
     category: params.category,
@@ -48,7 +48,7 @@ const getArticlesByCategory = async (params: IParams) => {
 
 const getDetailPost = async (id: string) => {
   const post = await client.fetch(
-    groq`*[_type=="post" && _id == $id ][0]{
+    groq`*[_type=="post" && slug.current == $id ][0]{
       ...,
     }`,
     { id },

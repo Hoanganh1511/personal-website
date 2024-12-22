@@ -1,9 +1,8 @@
 import { getArticlesByCategory } from "@/actions/get-posts";
 import { formatDateTime } from "@/utils/helper";
-import Link from "next/link";
+import { Link, useTransitionRouter } from "next-view-transitions";
 import React from "react";
-import Image from "next/image";
-import urlFor from "@/libs/urlFor";
+
 import { FaAws, FaReact, FaSlack, FaVuejs } from "react-icons/fa";
 import { TbApi } from "react-icons/tb";
 import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
@@ -11,6 +10,12 @@ import { GrGraphQl } from "react-icons/gr";
 import { FiFramer } from "react-icons/fi";
 import { SiDevdotto, SiExpress, SiMongoose } from "react-icons/si";
 import { IoLogoVercel } from "react-icons/io5";
+import { PiBrainThin } from "react-icons/pi";
+import { FiGithub } from "react-icons/fi";
+import { AiOutlineLinkedin } from "react-icons/ai";
+import { FaFacebookSquare } from "react-icons/fa";
+import SectionReact from "@/components/sections/SectionReact";
+import SectionNext from "@/components/sections/SectionNext";
 const skillList = [
   {
     name: "React",
@@ -92,131 +97,63 @@ const skillList = [
 const HomePage = async () => {
   const resArticlesReact = await getArticlesByCategory({
     category: "react",
-    limit: Number(6) || 3,
+    limit: Number(10) || 3,
   });
   const resArticlesNext = await getArticlesByCategory({
     category: "next-js",
-    limit: Number(6) || 3,
+    limit: Number(10) || 3,
   });
   const articlesReact = resArticlesReact.data;
   const articlesNext = resArticlesNext.data;
   if (!articlesReact) return;
+  console.log(articlesNext[0]);
   return (
-    <div className="pt-[40px] max-w-[1280px] mx-auto">
+    <div className="max-w-[48rem] mx-auto">
       <section>
+        <h1 className="my-[32px] text-[48px] text-black-primary font-bold">
+          Web Developer{" "}
+          <PiBrainThin className="inline-block text-[26px] text-primary " />
+        </h1>
+        <p className="block mb-8 font-plex-mono text-black-primary">
+          Welcome to my website! Here, I will be sharing my thoughts and
+          experiences about web development. These days, I mostly work with
+          React and Next.js, o expect content related to those technologies
+        </p>
+        <div className="mb-8 flex items-center">
+          Social Links:{" "}
+          <div className="ml-2 inline-flex items-center gap-x-[8px]">
+            <Link href="">
+              <FiGithub className="text-[22px] text-black-primary opacity-90" />
+            </Link>
+            <Link href="">
+              <AiOutlineLinkedin className="text-[26px] text-black-primary opacity-90" />
+            </Link>
+            <Link href="">
+              <FaFacebookSquare className="text-[23px] text-black-primary opacity-90" />
+            </Link>
+          </div>
+        </div>
+      </section>
+      {/* <section>
         <div className="flex flex-wrap gap-x-[12px] gap-y-[10px]">
           {skillList.map((item, id) => {
             return (
               <a
                 key={id}
                 href=""
-                className="p-[10px] text-white bg-black/90 w-fit flex items-center justify-center border-[1px] border-gray rounded-[5px] hover:scale-110 duration-200"
+                className="p-[8px] text-white bg-black/90 w-fit flex items-center justify-center border-[1px] border-gray rounded-[5px] hover:scale-110 duration-200"
               >
-                <item.icon className="mr-[8px] text-[20px]" />
-                <p className="uppercase font-plex-mono">{item.name}</p>
+                <item.icon className="mr-[8px] text-[16px] text-white" />
+                <p className="text-[13px] uppercase font-plex-mono text-white">
+                  {item.name}
+                </p>
               </a>
             );
           })}
         </div>
-      </section>
-      <section>
-        <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">
-          <a
-            href=""
-            className="px-6 block bg-white text-[24px] text-[#08085e] font-bold uppercase"
-          >
-            React
-          </a>
-        </h3>
-        <p className="text-center mb-8 text-gray-800">
-          The science of using computer programs to sift through thousands of
-          data points and then using computer programs to present that data in a
-          visual format.
-        </p>
-        <div className="grid grid-cols-3 gap-x-[30px] gap-y-[40px]">
-          {articlesReact.map((article, idx) => (
-            <Link
-              href=""
-              key={idx}
-              className="group col-span-1 w-full mx-auto border-[2px] border-black  "
-            >
-              <p className="h-[100px] block p-[10px] text-[20px] font-bold group-hover:underline text-[#3c3c3b]">
-                {article.title}
-              </p>
-              <div className="relative w-full aspect-[93/50] overflow-hidden">
-                <Image
-                  src={urlFor(article.mainImage).url()}
-                  alt=""
-                  fill
-                  className="object-cover group-hover:scale-[1.05] duration-300"
-                />
-              </div>
-              <div className="px-[20px] py-[12px]">
-                <div className="flex items-center gap-x-[8px]">
-                  <p className="mt-[6px] text-[14px] ">
-                    {formatDateTime(article._createdAt)}
-                  </p>
-                </div>
-                <div className="">
-                  <p className="mt-[8px] text-[16px]  line-clamp-3">
-                    {article.sapo}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section>
-        <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">
-          <a
-            href=""
-            className="px-6 block bg-white text-[24px] text-[#08085e] font-bold uppercase"
-          >
-            Next.js
-          </a>
-        </h3>
-        <p className="text-center mb-8 text-gray-800">
-          The science of using computer programs to sift through thousands of
-          data points and then using computer programs to present that data in a
-          visual format.
-        </p>
-        <div className="grid grid-cols-3 gap-x-[30px] gap-y-[40px]">
-          {articlesNext.map((article, idx) => (
-            <Link
-              href=""
-              key={idx}
-              className="group col-span-1  mx-auto border-[2px] border-black  "
-            >
-              <p className="h-[100px] block p-[10px] text-[20px] font-bold group-hover:underline text-[#3c3c3b]">
-                {article.title}
-              </p>
-              <div className="relative w-full aspect-[93/50] overflow-hidden">
-                {article.mainImage && (
-                  <Image
-                    src={urlFor(article.mainImage).url() || ""}
-                    alt=""
-                    fill
-                    className="object-cover group-hover:scale-[1.05] duration-300"
-                  />
-                )}
-              </div>
-              <div className="px-[20px] py-[12px]">
-                <div className="flex items-center gap-x-[8px]">
-                  <p className="mt-[6px] text-[14px] ">
-                    {formatDateTime(article._createdAt)}
-                  </p>
-                </div>
-                <div className="">
-                  <p className="mt-[8px] text-[16px]  line-clamp-3">
-                    {article.sapo}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      </section> */}
+      <SectionNext articles={articlesNext} />
+      <SectionReact articles={articlesReact} />
     </div>
   );
 };

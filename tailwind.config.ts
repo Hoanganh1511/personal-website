@@ -48,6 +48,7 @@ const config: Config = {
         lora: ["var(--font-lora)"],
         "plex-sans": ["var(--font-plex-sans)"],
         "plex-mono": ["var(--font-plex-mono)"],
+        "dancing-script": ["var(--font-dancing-script)"],
         poppins: ["var(--font-poppins)"],
         "poppins-medium": ["var(--font-poppins-medium)"],
         "poppins-bold": ["var(--font-poppins-bold)"],
@@ -65,7 +66,8 @@ const config: Config = {
       },
       animation: {},
       colors: {
-        primary: "rgba(255,255,255,0.8)",
+        primary: "rgba(211,0,106,1)",
+        "black-primary": "rgba(34,46,54,1)",
         "custom-blue": "#0037A5",
         "custom-blue-light": "#0c5dff",
       },

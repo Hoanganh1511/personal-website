@@ -2,19 +2,9 @@ import { getArticlesByCategory } from "@/actions/get-posts";
 import Link from "next/link";
 import React from "react";
 import { MdCalendarMonth } from "react-icons/md";
-import { IoLogoJavascript } from "react-icons/io5";
-import { SiNextdotjs } from "react-icons/si";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { formatDateTime } from "@/utils/helper";
 import Pagination from "./_components/Pagination";
-// getArticlesByCategory({
-//   category: "next-js",
-//   limit: 3,
-// }),
-// getArticlesByCategory({
-//   category: "javascript",
-//   limit: 3,
-// }),
+
 const BlogPage = async ({
   searchParams: { page },
 }: {

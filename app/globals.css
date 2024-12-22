@@ -8,11 +8,8 @@
     font-family: "AmazonEmber";
   }
 }
-
 body {
-  /* background: rgba(17, 24, 39, 1); */
-  /* background-color: black; */
-  color: black;
+  -webkit-font-smoothing: antialiased;
 }
 html {
   scroll-behavior: smooth;
@@ -22,25 +19,29 @@ html {
     text-wrap: balance;
   }
 }
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.2s);
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li,
+b,
+strong,
+i,
+div,
+span {
+  @apply text-black-primary;
 }
 
+/* .container {
+  view-transition-name: container-move;
+} */
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 15px;
-}
-
-*::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 14px;
-  border: 3px solid var(--primary);
 }
 
 .title-separate {

@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { sendGTMEvent } from "@next/third-parties/google";
 import { usePathname } from "next/navigation";
 import { useDebounceValue, useOnClickOutside } from "usehooks-ts";
 import { TbHomeFilled } from "react-icons/tb";
@@ -39,16 +38,16 @@ const Header = () => {
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   return (
     <nav className="z-10 w-full backdrop-blur-2xl">
-      <div className="max-w-[1280px] mx-auto h-[100px] flex items-center justify-start border-b-[1px] border-black/20">
-        <Link href="/" className="text-2xl font-bold">
-          fullstack.dev
+      <div className="max-w-[48rem] mx-auto h-[100px] flex items-center justify-between border-b-[1px] border-black/20">
+        <Link href="/" className="text-[34px] font-bold font-dancing-script">
+          Hoang Tuan Anh
         </Link>
         <div className="ml-10 flex items-center gap-x-3">
           {navs.map((nav, idx) => (
             <Link
               key={idx}
               href={nav.href}
-              className="px-4 font-semibold hover:underline"
+              className="px-4 font-plex-mono font-semibold hover:underline"
             >
               {nav.text}
             </Link>
