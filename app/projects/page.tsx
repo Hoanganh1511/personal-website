@@ -33,6 +33,20 @@ const listProject = [
       "Một trường học về Game, tạo ra trò chơi, sáng tạo nội dung và hoạt hình trao quyền cho thế hệ người sáng tạo tiếp theo",
   },
   {
+    name: "Gigago",
+    href: "https://gigago.com/",
+    description:
+      "GIGAGO là đơn vị cung cấp giải pháp kết nối IoT và eSIM du lịch quốc tế UY TÍN và HÀNG ĐẦU cho hơn 100 quốc gia và vùng lãnh thổ.",
+    image: "https://i.ytimg.com/vi/Mctmj1FIVcM/maxresdefault.jpg",
+  },
+  {
+    name: "Eduquiz",
+    href: "https://eduquiz.vn/",
+    description:
+      "Tạo câu hỏi và đề thi nhanh với những giải pháp thông minh. EduQuiz tận dụng sức mạnh công nghệ để nâng cao trình độ học tập của bạn.",
+    image: "https://eduquiz.vn/images/homepage.png",
+  },
+  {
     name: "Au PC - Audition - Nơi cảm xúc thăng hoa",
     href: "https://au.vtc.vn/",
     image:
@@ -74,13 +88,6 @@ const listProject = [
     href: "https://duyendangngoaithuong.bvote.vn/",
     image:
       "https://cdnmedia.vtcgame.vn/aupc/trangchu/assets/images/audition-gameamnhacthoitranghenho.jpg",
-  },
-  {
-    name: "Gigago",
-    href: "https://gigago.com/",
-    description:
-      "GIGAGO là đơn vị cung cấp giải pháp kết nối IoT và eSIM du lịch quốc tế UY TÍN và HÀNG ĐẦU cho hơn 100 quốc gia và vùng lãnh thổ.",
-    image: "https://i.ytimg.com/vi/Mctmj1FIVcM/maxresdefault.jpg",
   },
 ];
 export default async function Home() {
