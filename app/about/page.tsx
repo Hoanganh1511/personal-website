@@ -53,14 +53,13 @@ const page = () => {
                 long-term development and have opportunities to advance to team
                 or project management positions.
               </p>
-              {/* <div className="mt-4">
-                <Link
-                  href="/projects"
-                  className="block w-fit mx-auto bg-[#1679AB] text-white px-5 py-[8px] rounded-sm hover:bg-[#06689b]  duration-300"
-                >
-                  Projects
-                </Link>
-              </div> */}
+              <br />
+              <p className="indent-4 font-light">
+                Recently, I’ve been focusing on web development and staying
+                updated on everything happening in the field. Currently, I’m
+                working on projects using React Server Components and the
+                Next.js App Router.
+              </p>
             </div>
           </Section>
           {/* <Section title="Bio">
