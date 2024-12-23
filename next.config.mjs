@@ -15,6 +15,7 @@ const nextConfig = {
       "thanhnien.mediacdn.vn",
       "i.ytimg.com",
       "cdn.tgdd.vn",
+      "eduquiz.vn",
     ],
   },
 };

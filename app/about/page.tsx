@@ -4,10 +4,10 @@ import Link from "next/link";
 const page = () => {
   return (
     <div className="relative p-[20px] pt-[40px]">
-      <div className="max-w-container-sm mx-auto ">
+      <div className="max-w-[48rem] mx-auto ">
         <div className="mt-4 flex">
           <div className="flex-1 flex flex-col">
-            <h4 className="text-[30px] font-bold">Hoàng Tuấn Anh</h4>
+            <h4 className="text-[30px] font-bold font-plex-mono">About me</h4>
             <div className="">
               <div className="text-[18px]">Web Developer</div>
               <div className="mt-2 font-light text-[15px] flex gap-[20px]">
@@ -53,17 +53,17 @@ const page = () => {
                 long-term development and have opportunities to advance to team
                 or project management positions.
               </p>
-              <div className="mt-4">
+              {/* <div className="mt-4">
                 <Link
                   href="/projects"
                   className="block w-fit mx-auto bg-[#1679AB] text-white px-5 py-[8px] rounded-sm hover:bg-[#06689b]  duration-300"
                 >
                   Projects
                 </Link>
-              </div>
+              </div> */}
             </div>
           </Section>
-          <Section title="Bio">
+          {/* <Section title="Bio">
             <div className="">
               <div className="flex gap-4 mb-1">
                 <div className="font-bold">2000</div>
@@ -94,7 +94,7 @@ const page = () => {
                 Art, Music, Vlog, Information Technology
               </div>
             </div>
-          </Section>
+          </Section> */}
         </div>
       </div>
     </div>
