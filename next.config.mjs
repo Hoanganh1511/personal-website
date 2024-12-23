@@ -12,6 +12,9 @@ const nextConfig = {
       "baodienbien.xembao.vn",
       "cdn-i.vtcnews.vn",
       "vtcgame.vn",
+      "thanhnien.mediacdn.vn",
+      "i.ytimg.com",
+      "cdn.tgdd.vn",
     ],
   },
 };

@@ -106,7 +106,6 @@ const HomePage = async () => {
   const articlesReact = resArticlesReact.data;
   const articlesNext = resArticlesNext.data;
   if (!articlesReact) return;
-  console.log(articlesNext[0]);
   return (
     <div className="max-w-[48rem] mx-auto">
       <section>

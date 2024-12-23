@@ -6,7 +6,7 @@ const SectionNext = ({ articles }: { articles: IArticle[] }) => {
   return (
     <section>
       <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">
-        <div className="px-6 block bg-white text-[24px] text-[#08085e] font-bold uppercase">
+        <div className="px-6 block bg-white text-[24px] text-black-primary font-bold uppercase">
           Next
         </div>
       </h3>

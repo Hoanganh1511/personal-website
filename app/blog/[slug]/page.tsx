@@ -1,4 +1,4 @@
-import { getDetailPost } from "@/actions/get-posts";
+import { getAllArticle, getDetailPost } from "@/actions/get-posts";
 import RichTextComponent from "@/components/ui/RichTextComponent";
 import { PortableText } from "next-sanity";
 import React from "react";
@@ -12,17 +12,22 @@ import {
 import Link from "next/link";
 import BackButton from "./_component/BackButton";
 import ScrollToTopButton from "./_component/ScrollToTop";
-import TitleView from "./_component/TitleView";
+import TitleView from "./_component/TitleTransition";
+export async function generateStaticParams() {
+  let resPosts = await getAllArticle({});
+
+  return resPosts.data.map((post) => ({
+    slug: post.slug.current,
+  }));
+}
+
 const BlogDetail = async ({ params }: { params: { slug: string } }) => {
   const post = await getDetailPost(params.slug);
   return (
     <div className="max-w-[48rem] mx-auto relative">
       <div className="pb-[48px]">
         <BackButton />
-        {/*  */}
-        {/* <div className="demo-box">
-          <span className="demo">demo</span>
-        </div> */}
+
         <TitleView title={post?.title || ""} slug={post?.slug.current || ""} />
         <div className="font-plex-mono italic mt-[8px] ">
           September 6, 2022 · 5 min read
@@ -76,26 +81,3 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default BlogDetail;
-// ("use client");
-// import { useTransitionRouter } from "next-view-transitions";
-
-// export default function Page() {
-//   const router = useTransitionRouter();
-//   return (
-//     <div className="demo-box">
-//       <h2>
-//         This is the <span className="demo">demo</span>
-//       </h2>
-//       <p>OK you just saw the demo :)</p>
-//       <a
-//         href="/"
-//         onClick={(e) => {
-//           e.preventDefault();
-//           router.back();
-//         }}
-//       >
-//         ← Back to homepage
-//       </a>
-//     </div>
-//   );
-// }
