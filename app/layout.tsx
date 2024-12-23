@@ -4,7 +4,6 @@ import "./globals.css";
 import { Providers } from "@/redux/provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { AnimatePresence } from "framer-motion";
 const plex_sans = IBM_Plex_Sans({
   subsets: ["latin"],
   variable: "--font-plex-sans",

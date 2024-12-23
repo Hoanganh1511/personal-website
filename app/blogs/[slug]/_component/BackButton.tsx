@@ -8,8 +8,7 @@ const BackButton = () => {
     <button
       onClick={(e) => {
         e.preventDefault();
-        // router.back();
-        history.back();
+        router.back();
       }}
       className="mt-[32px] mb-[8px] group flex items-center hover:opacity-80"
     >

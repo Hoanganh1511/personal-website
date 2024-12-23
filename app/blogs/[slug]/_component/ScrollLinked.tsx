@@ -28,6 +28,7 @@ export default function ScrollLinked({
           backgroundColor: "rgba(211,0,106,1)",
         }}
       />
+
       {children}
     </>
   );
