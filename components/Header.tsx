@@ -24,7 +24,7 @@ const navs = [
     href: "/tech",
   },
   {
-    text: "Blog",
+    text: "About",
     href: "/blog",
   },
 ];
@@ -47,7 +47,7 @@ const Header = () => {
             <Link
               key={idx}
               href={nav.href}
-              className="px-4 font-plex-mono font-semibold hover:underline"
+              className={`px-4 font-plex-mono font-semibold hover:text-primary decoration-wavy hover:underline`}
             >
               {nav.text}
             </Link>
