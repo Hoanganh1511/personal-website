@@ -13,6 +13,7 @@ import BackButton from "./_component/BackButton";
 import ScrollToTopButton from "./_component/ScrollToTop";
 import TitleView from "./_component/TitleTransition";
 import ScrollLinked from "./_component/ScrollLinked";
+import getPageNumbers from "@/utils/getPageNumbers";
 export async function generateStaticParams() {
   let resPosts = await getAllArticle({});
 
@@ -21,8 +22,14 @@ export async function generateStaticParams() {
   }));
 }
 
-const BlogDetail = async ({ params }: { params: { slug: string } }) => {
-  const post = await getDetailPost(params.slug);
+const BlogDetail = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) => {
+  // const totalPagesArray = getPageNumbers()
+  // const currentPage = !isNaN(Number(slug));
+  const post = await getDetailPost(slug);
   return (
     <ScrollLinked>
       <div className="max-w-[48rem] mx-auto relative">
