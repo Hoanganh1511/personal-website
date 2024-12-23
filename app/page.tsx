@@ -133,7 +133,8 @@ const HomePage = async () => {
           </div>
         </div>
       </section>
-      {/* <section>
+
+      <section>
         <div className="flex flex-wrap gap-x-[12px] gap-y-[10px]">
           {skillList.map((item, id) => {
             return (
@@ -150,7 +151,7 @@ const HomePage = async () => {
             );
           })}
         </div>
-      </section> */}
+      </section>
       <SectionNext articles={articlesNext} />
       <SectionReact articles={articlesReact} />
     </div>

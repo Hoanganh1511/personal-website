@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="max-w-[48rem] mx-auto ">
+    <div className="mt-[32px] max-w-[48rem] mx-auto ">
       <div className="py-[1rem] border-t-[1px] border-primary">
         <div className="my-[.5rem] flex justify-between">
           <Link href="" className=" ">
