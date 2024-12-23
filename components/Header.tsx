@@ -45,10 +45,8 @@ const Header = () => {
               key={idx}
               prefetch={true}
               href={nav.href}
-              className={`px-4 font-plex-mono font-semibold hover:text-primary ${
-                nav.href === pathname
-                  ? "decoration-wavy underline text-primary"
-                  : ""
+              className={`px-4 font-plex-mono font-medium hover:text-primary ${
+                nav.href === pathname ? "decoration-wavy underline " : ""
               }`}
             >
               {nav.text}
