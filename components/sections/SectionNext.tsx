@@ -2,19 +2,16 @@ import { IArticle } from "@/types/apiTypes";
 import { formatDateTime } from "@/utils/helper";
 import React from "react";
 import { Link } from "next-view-transitions";
+import { IconArrowNarrowRight } from "@tabler/icons-react";
 const SectionNext = ({ articles }: { articles: IArticle[] }) => {
   return (
-    <section>
-      <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">
-        <div className="px-6 block bg-white text-[24px] text-black-primary font-bold uppercase">
-          Next
-        </div>
-      </h3>
-      <div className="grid grid-cols-1 gap-x-[30px] gap-y-[40px]">
+    <section className="mt-[48px]">
+      <h3 className="text-[24px] font-semibold">Featured Posts</h3>
+      <div className="mt-[1.5rem] grid grid-cols-1 gap-x-[30px] gap-y-[40px]">
         {articles.map((article, idx) => (
           <div key={idx} className="group col-span-1 w-full mx-auto   ">
             <Link
-              href={`/blog/${article.slug.current}`}
+              href={`/blogs/${article.slug.current}`}
               className=" block w-fit text-[18px] font-medium border-dashed border-b-[2px] border-transparent hover:border-primary text-primary"
               style={{
                 viewTransitionName: `demo-title-${article.slug.current}`,
@@ -34,6 +31,15 @@ const SectionNext = ({ articles }: { articles: IArticle[] }) => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="">
+        <Link
+          href="/blogs"
+          className="group w-fit mx-auto mt-16 flex items-center hover:text-primary"
+        >
+          All Posts{" "}
+          <IconArrowNarrowRight className="ml-[8px] group-hover:stroke-primary" />
+        </Link>
       </div>
     </section>
   );

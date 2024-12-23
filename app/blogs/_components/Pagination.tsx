@@ -3,7 +3,18 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import qs from "query-string";
-const Pagination = () => {
+import { Link } from "next-view-transitions";
+const Pagination = ({
+  currentPage,
+  totalPage,
+}: // prevUrl,
+// nextUrl,
+{
+  currentPage: number;
+  totalPage: number;
+  // prevUrl: string;
+  // nextUrl: string;
+}) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [page, setPage] = useState<number>(Number(1));
@@ -28,31 +39,38 @@ const Pagination = () => {
     setPage(pageNum);
     router.push(url, { scroll: false });
   };
-  const totalPages = 3;
+
   return (
     <>
       <div className="flex items-center justify-center">
-        <button
-          disabled={page === 1}
-          onClick={() => onChangePage(page - 1)}
-          className="flex items-center disabled:opacity-40"
+        <Link
+          // disabled={page === 1}
+          // prevUrl={`/blogs?page=${Number(page) > 0 ? Number(page) - 1 : 1}`}
+          // nextUrl={`/blogs?page=${(Number(page) || 1) + 1}`}
+          href={`/blogs?page=${Number(page) > 0 ? Number(page) - 1 : 1}`}
+          // onClick={() => onChangePage(page - 1)}
+          className={`flex items-center disabled:opacity-40 ${
+            currentPage === 1 ? "pointer-events-none opacity-50" : ""
+          } hover:text-primary`}
         >
           <GoArrowLeft className="mr-[12px] size-[20px]" />
           <span>Prev</span>
-        </button>
+        </Link>
         <div className="mx-4">
           {page}
           {" / "}
-          {totalPages}
+          {totalPage}
         </div>
-        <button
-          disabled={page === totalPages}
-          onClick={() => onChangePage(page + 1)}
-          className="flex items-center disabled:opacity-40"
+        <Link
+          href={`/blogs?page=${(Number(page) || 1) + 1}`}
+          // onClick={() => onChangePage(page + 1)}
+          className={`flex items-center disabled:opacity-40 ${
+            currentPage === totalPage ? "pointer-events-none opacity-50" : ""
+          } hover:text-primary`}
         >
           <span>Next</span>
           <GoArrowRight className="ml-[12px] size-[20px]" />
-        </button>
+        </Link>
       </div>
     </>
   );

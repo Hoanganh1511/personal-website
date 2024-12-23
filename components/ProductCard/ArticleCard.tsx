@@ -14,7 +14,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       <p className="text-white/75">
         📜{" "}
         <a
-          href={`/blog/${article._id}`}
+          href={`/blogs/${article._id}`}
           className="text-[#00c8ff] font-normal hover:underline"
         >
           {article.title}

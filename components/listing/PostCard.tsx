@@ -9,7 +9,7 @@ const PostCard = ({ post }: { post: IArticle }) => {
   return (
     <Link
       key={post._id}
-      href={`/blog/${post._id}`}
+      href={`/blogs/${post._id}`}
       className="group cursor-pointer relative bg-white shadow-[0_16px_32px_0_rgba(41,41,41,.1)] rounded-[12px] overflow-hidden"
     >
       <Image

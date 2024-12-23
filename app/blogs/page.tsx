@@ -1,16 +1,26 @@
-import { IArticle } from "@/types/apiTypes";
-import { formatDateTime } from "@/utils/helper";
+import { getArticlesByCategory } from "@/actions/get-posts";
 import React from "react";
+import { MdCalendarMonth } from "react-icons/md";
+import { formatDateTime } from "@/utils/helper";
+import Pagination from "./_components/Pagination";
 import { Link } from "next-view-transitions";
-const SectionNext = ({ articles }: { articles: IArticle[] }) => {
+
+const BlogPage = async ({
+  searchParams: { page = "1" },
+}: {
+  searchParams: { page?: string };
+}) => {
+  const resArticlesNext = await getArticlesByCategory({
+    category: "next-js",
+    offset: Number(page) > 0 ? (Number(page) - 1) * 3 : 0,
+    limit: 3,
+  });
+  const articles = resArticlesNext.data;
+  if (!articles) return;
   return (
-    <section>
-      <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">
-        <div className="px-6 block bg-white text-[24px] text-black-primary font-bold uppercase">
-          React
-        </div>
-      </h3>
-      <div className="grid grid-cols-1 gap-x-[30px] gap-y-[40px]">
+    <section className="mt-[48px] max-w-[48rem] mx-auto">
+      <h3 className="text-[24px] font-semibold">Featured Posts</h3>
+      <div className="mt-[1.5rem] grid grid-cols-1 gap-x-[30px] gap-y-[40px]">
         {articles.map((article, idx) => (
           <div key={idx} className="group col-span-1 w-full mx-auto   ">
             <Link
@@ -35,8 +45,14 @@ const SectionNext = ({ articles }: { articles: IArticle[] }) => {
           </div>
         ))}
       </div>
+      <div className="flex items-center justify-center mt-12">
+        <Pagination
+          currentPage={Number(page)}
+          totalPage={resArticlesNext.total / 3}
+        />
+      </div>
     </section>
   );
 };
 
-export default SectionNext;
+export default BlogPage;

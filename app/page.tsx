@@ -16,96 +16,15 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 import SectionReact from "@/components/sections/SectionReact";
 import SectionNext from "@/components/sections/SectionNext";
-const skillList = [
-  {
-    name: "React",
-    icon: FaReact,
-  },
-  {
-    name: "Next.js",
-    icon: RiNextjsLine,
-  },
-  {
-    name: "Vue.js",
-    icon: FaVuejs,
-  },
-  {
-    name: "TypeScript",
-    icon: FaReact,
-  },
-  {
-    name: "RESTful",
-    icon: TbApi,
-  },
-  {
-    name: "GraphQL",
-    icon: GrGraphQl,
-  },
-  {
-    name: "Framer Motion",
-    icon: FiFramer,
-  },
-  {
-    name: "TailwindCSS",
-    icon: RiTailwindCssFill,
-  },
-  {
-    name: "Styled-components",
-    icon: FaReact,
-  },
-  {
-    name: "Bootstrap",
-    icon: FaReact,
-  },
-  {
-    name: "Git / GitLab",
-    icon: FaReact,
-  },
-  {
-    name: "Jira",
-    icon: FaReact,
-  },
-  {
-    name: "Slack",
-    icon: FaSlack,
-  },
-  {
-    name: "Postman",
-    icon: FaReact,
-  },
-  {
-    name: "Vercel",
-    icon: IoLogoVercel,
-  },
-  {
-    name: "AWS",
-    icon: FaAws,
-  },
-  {
-    name: "Express.js",
-    icon: SiExpress,
-  },
-  {
-    name: "Mongoose",
-    icon: SiMongoose,
-  },
-  {
-    name: "Core Web Vital",
-    icon: SiDevdotto,
-  },
-];
+import SkillList from "@/components/sections/SkillList";
+
 const HomePage = async () => {
-  const resArticlesReact = await getArticlesByCategory({
-    category: "react",
-    limit: Number(10) || 3,
-  });
   const resArticlesNext = await getArticlesByCategory({
     category: "next-js",
-    limit: Number(10) || 3,
+    limit: 3,
+    offset: 0,
   });
-  const articlesReact = resArticlesReact.data;
   const articlesNext = resArticlesNext.data;
-  if (!articlesReact) return;
   return (
     <div className="max-w-[48rem] mx-auto">
       <section>
@@ -115,8 +34,9 @@ const HomePage = async () => {
         </h1>
         <p className="block mb-8 font-plex-mono text-black-primary">
           Welcome to my website! Here, I will be sharing my thoughts and
-          experiences about web development. These days, I mostly work with
-          React and Next.js, o expect content related to those technologies
+          experiences about web development. These days, I mostly work with{" "}
+          <b>React</b> and <b>Next.js</b>, hope you expect content related to
+          those technologies
         </p>
         <div className="mb-8 flex items-center">
           Social Links:{" "}
@@ -133,27 +53,9 @@ const HomePage = async () => {
           </div>
         </div>
       </section>
-
-      <section>
-        <div className="flex flex-wrap gap-x-[12px] gap-y-[10px]">
-          {skillList.map((item, id) => {
-            return (
-              <a
-                key={id}
-                href=""
-                className="p-[8px] text-white bg-black/90 w-fit flex items-center justify-center border-[1px] border-gray rounded-[5px] hover:scale-110 duration-200"
-              >
-                <item.icon className="mr-[8px] text-[16px] text-white" />
-                <p className="text-[13px] uppercase font-plex-mono text-white">
-                  {item.name}
-                </p>
-              </a>
-            );
-          })}
-        </div>
-      </section>
+      <SkillList />
       <SectionNext articles={articlesNext} />
-      <SectionReact articles={articlesReact} />
+      {/* <SectionReact articles={articlesReact} /> */}
     </div>
   );
 };

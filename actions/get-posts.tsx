@@ -8,8 +8,16 @@ interface IParams {
   limit?: number;
 }
 
-const getAllArticle = async (params: { limit?: number }) => {
-  const querySanity = groq`*[_type=="post"] ${params.limit ? `[0...${params.limit}]` : ""} {
+const getAllArticle = async ({
+  limit = 3,
+  offset = 0,
+}: {
+  limit?: number;
+  offset?: number;
+}) => {
+  const querySanity = groq`*[_type=="post"] ${
+    limit ? `[${offset}...${limit}]` : ""
+  } {
           ...,
           author->,
           categories[]->,
@@ -20,27 +28,46 @@ const getAllArticle = async (params: { limit?: number }) => {
     data: data as IArticle[],
   };
 };
-const getArticlesByCategory = async (params: IParams) => {
-  console.log(params.category);
-  const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current] ${params.limit ? `[0...${params.limit}]` : ""}{
+const getArticlesByCategory = async ({
+  category,
+  limit = 3,
+  offset = 0,
+}: {
+  category?: string;
+  limit?: number;
+  offset?: number;
+}) => {
+  const queryAllBlogsWithCategorySanity = groq`*[_type=="post" && $category in categories[]->tag.current] {
           ...,
           author->,
           categories[]->,
           "category": *[_type == 'category' && tag.current == $category][0]
         } | order(_createdAt desc)`;
-
+  const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current] {
+          ...,
+          author->,
+          categories[]->,
+          "category": *[_type == 'category' && tag.current == $category][0]
+        } | order(_createdAt desc) ${
+          limit ? `[${offset}...${offset + limit}]` : ""
+        }`;
+  const allData = await client.fetch(queryAllBlogsWithCategorySanity, {
+    category: category,
+  });
   const data = await client.fetch(querySanity, {
-    category: params.category,
+    category: category,
   });
   if (!data.length) {
     return {
       data: [],
+      total: allData?.length || 0,
       title: "",
       description: "",
     };
   }
   return {
     data: data as IArticle[],
+    total: allData?.length || 0,
     title: data[0].category.title,
     description: data[0].category.description,
   };

@@ -32,7 +32,7 @@ function ArticleCard({ article }: { article: IArticle }) {
       className="group relative col-span-3 xl:col-span-3 flex flex-col  bg-white rounded-[4px] border-[2px] border-transparent"
     >
       <Link
-        href={`/blog/${article._id}`}
+        href={`/blogs/${article._id}`}
         className="relative w-full md:h-[178px] xl:h-[200px] mr-[24px] rounded-[4px] overflow-hidden"
       >
         <Image
@@ -45,7 +45,7 @@ function ArticleCard({ article }: { article: IArticle }) {
       <div className="flex-1 flex flex-col">
         <div className="flex flex-col gap-y-[12px]">
           <a
-            href={`/blog/${article._id}`}
+            href={`/blogs/${article._id}`}
             className="mt-5 text-[20px] leading-[24px] font-poppins-medium text-[#292929] hover:underline"
           >
             {article.title}
@@ -62,7 +62,7 @@ function ArticleCard({ article }: { article: IArticle }) {
           </div>
           <div className="flex items-center mt-[24px]">
             <Link
-              href={`/blog/${article._id}`}
+              href={`/blogs/${article._id}`}
               className="w-[32px] h-[32px] rounded-full flex justify-center items-center bg-red-400"
             >
               <Image
@@ -75,7 +75,7 @@ function ArticleCard({ article }: { article: IArticle }) {
             </Link>
             <div className="ml-3">
               <a
-                href={`/blog/${article._id}`}
+                href={`/blogs/${article._id}`}
                 className="block text-[14.5px] leading-[1rem] text-black"
               >
                 Tuấn Anh

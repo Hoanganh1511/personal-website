@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDebounceValue, useOnClickOutside } from "usehooks-ts";
 import { TbHomeFilled } from "react-icons/tb";
@@ -14,6 +13,7 @@ import { categoryData } from "@/data";
 import { FiSearch } from "react-icons/fi";
 import { MdArticle } from "react-icons/md";
 import { IoCodeWorkingSharp } from "react-icons/io5";
+import { Link } from "next-view-transitions";
 const navs = [
   {
     text: "Projects",

@@ -12,7 +12,6 @@ const RepositoriesSection = () => {
       .then((response) => response.json())
       .then((data) => {
         setRepos(data);
-        console.log(data);
       });
   };
 
