@@ -92,7 +92,7 @@ const listProject = [
 ];
 export default async function Home() {
   return (
-    <div className="py-[40px] max-w-[48rem] mx-auto">
+    <div className="py-[40px] max-w-[48rem] mx-auto px-[1rem]">
       <div className="flex gap-x-[60px]">
         <div className="w-full">
           <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 const page = () => {
   return (
-    <div className="relative p-[20px] pt-[40px]">
+    <div className="relative px-[1rem] py-[20px] pt-[40px]">
       <div className="max-w-[48rem] mx-auto ">
         <div className="mt-4 flex">
           <div className="flex-1 flex flex-col">

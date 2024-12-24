@@ -13,7 +13,6 @@ import BackButton from "./_component/BackButton";
 import ScrollToTopButton from "./_component/ScrollToTop";
 import TitleView from "./_component/TitleTransition";
 import ScrollLinked from "./_component/ScrollLinked";
-import getPageNumbers from "@/utils/getPageNumbers";
 export async function generateStaticParams() {
   let resPosts = await getAllArticle({});
 
