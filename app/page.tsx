@@ -26,9 +26,9 @@ const HomePage = async () => {
   });
   const articlesNext = resArticlesNext.data;
   return (
-    <div className="max-w-[48rem] mx-auto">
+    <div className="max-w-[48rem] mx-auto px-[1rem]">
       <section>
-        <h1 className="my-[32px] text-[48px] text-black-primary font-bold">
+        <h1 className="mt-[32px] mb-[20px] lg:my-[32px] text-[30px] lg:text-[48px] text-black-primary font-bold">
           Web Developer{" "}
           <PiBrainThin className="inline-block text-[26px] text-primary " />
         </h1>

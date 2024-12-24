@@ -14,6 +14,7 @@ import { FiSearch } from "react-icons/fi";
 import { MdArticle } from "react-icons/md";
 import { IoCodeWorkingSharp } from "react-icons/io5";
 import { Link } from "next-view-transitions";
+import { IconMenuDeep, IconMoon, IconSearch, IconX } from "@tabler/icons-react";
 const navs = [
   {
     text: "Projects",
@@ -34,25 +35,65 @@ const Header = () => {
   );
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   return (
-    <nav className="z-10 w-full backdrop-blur-2xl">
-      <div className="max-w-[48rem] mx-auto h-[100px] flex items-center justify-between border-b-[0.5px] border-primary/30">
-        <Link href="/" className="text-[34px] font-bold font-dancing-script">
-          Hoang Tuan Anh
-        </Link>
-        <div className="ml-10 flex items-center gap-x-3">
-          {navs.map((nav, idx) => (
-            <Link
-              key={idx}
-              prefetch={true}
-              href={nav.href}
-              className={`px-4 font-plex-mono font-medium hover:text-primary ${
-                nav.href === pathname ? "decoration-wavy underline " : ""
-              }`}
-            >
-              {nav.text}
-            </Link>
-          ))}
+    <nav className="z-10 w-full backdrop-blur-2xl max-w-[48rem] mx-auto px-[1rem] ">
+      <div className="border-b-[0.5px] border-primary/30">
+        <div className="py-[16px] flex items-center justify-between">
+          <Link href="/" className="text-[34px] font-bold font-dancing-script">
+            Hoang Tuan Anh
+          </Link>
+          <div className="hidden lg:flex ml-10 items-center gap-x-3">
+            {navs.map((nav, idx) => (
+              <Link
+                key={idx}
+                prefetch={true}
+                href={nav.href}
+                className={`px-4 font-plex-mono font-medium hover:text-primary ${
+                  nav.href === pathname ? "decoration-wavy underline " : ""
+                }`}
+              >
+                {nav.text}
+              </Link>
+            ))}
+          </div>
+          <div className="md:hidden">
+            {isShowSearchDrawer ? (
+              <IconX
+                className="size-[30px] stroke-black-primary"
+                onClick={toggleDrawer}
+              />
+            ) : (
+              <IconMenuDeep
+                className="size-[30px] stroke-black-primary"
+                onClick={toggleDrawer}
+              />
+            )}
+          </div>
         </div>
+        {isShowSearchDrawer && (
+          <ul className="flex flex-col items-center gap-y-[0.5rem]">
+            <li className="">
+              <Link href="/projects" className="block p-[0.75rem_1rem]">
+                Projects
+              </Link>
+            </li>
+            <li className="">
+              <Link href="/about" className="block p-[0.75rem_1rem]">
+                About
+              </Link>
+            </li>
+            <li className="">
+              <div className="flex py-[12px] gap-x-[38px] items-center justify-center">
+                <button className="size-[40px] flex items-center justify-center">
+                  {" "}
+                  <IconSearch className="size-[26px]" />
+                </button>
+                <button className="size-[40px] flex items-center justify-center">
+                  <IconMoon className="size-[26px]" />
+                </button>
+              </div>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
   );
