@@ -41,13 +41,16 @@ const HomePage = async () => {
         <div className="mb-8 flex items-center">
           Social Links:{" "}
           <div className="ml-2 inline-flex items-center gap-x-[8px]">
-            <Link href="">
+            <Link href="https://github.com/Hoanganh1511" target={"_blank"}>
               <FiGithub className="text-[22px] text-black-primary opacity-90" />
             </Link>
-            <Link href="">
+            <Link
+              href="https://www.linkedin.com/in/hoanganh1511/"
+              target={"_blank"}
+            >
               <AiOutlineLinkedin className="text-[26px] text-black-primary opacity-90" />
             </Link>
-            <Link href="">
+            <Link href="https://www.facebook.com/jm.1511/" target={"_blank"}>
               <FaFacebookSquare className="text-[23px] text-black-primary opacity-90" />
             </Link>
           </div>
