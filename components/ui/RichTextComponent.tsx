@@ -1,17 +1,9 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
-import atomOneDark from "react-syntax-highlighter/dist/esm/styles/hljs/atom-one-dark";
 import Link from "next/link";
 import urlFor from "@/libs/urlFor";
 import CopyCode from "../CopyCode";
 import React from "react";
-interface Props {
-  props: {
-    value: {
-      code: string;
-      language: string;
-    };
-  };
-}
+import CodeBlock from "../CodeBlock";
+
 // const Table = ({ value }: { value: any }) => {
 //   return (
 //     <table>
@@ -30,24 +22,7 @@ interface Props {
 //     </tr>
 //   );
 // };
-const CodeBlock = ({ props }: Props) => {
-  const { code, language } = props?.value;
-  return (
-    <SyntaxHighlighter
-      showLineNumbers={true}
-      showInlineLineNumbers={true}
-      language={language}
-      style={atomOneDark}
-      customStyle={{
-        padding: "1em",
-        marginBottom: "2em",
-      }}
-      className="text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3"
-    >
-      {code}
-    </SyntaxHighlighter>
-  );
-};
+
 const RichTextComponent = {
   types: {
     image: (props: any) => {
