@@ -40,23 +40,14 @@ const RichTextComponent = {
             <div className="absolute right-[12px] top-0 -translate-y-1/2">
               <CopyCode copyText={props.value.code} />
             </div>
-            {React.createElement(
-              SyntaxHighlighter,
-              {
-                language: props.value.language,
-                style: atomOneDark,
-                className:
-                  "text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3",
-              },
-              props.value.code
-            )}
-            {/* <SyntaxHighlighter
+
+            <SyntaxHighlighter
               language={props.value.language}
               style={atomOneDark}
               className="text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3"
             >
               {props.value.code}
-            </SyntaxHighlighter> */}
+            </SyntaxHighlighter>
           </div>
         );
       }
