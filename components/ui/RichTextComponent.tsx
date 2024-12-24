@@ -1,11 +1,17 @@
-"use client";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import atomOneDark from "react-syntax-highlighter/dist/esm/styles/hljs/atom-one-dark";
 import Link from "next/link";
 import urlFor from "@/libs/urlFor";
 import CopyCode from "../CopyCode";
 import React from "react";
-
+interface Props {
+  props: {
+    value: {
+      code: string;
+      language: string;
+    };
+  };
+}
 // const Table = ({ value }: { value: any }) => {
 //   return (
 //     <table>
@@ -24,6 +30,24 @@ import React from "react";
 //     </tr>
 //   );
 // };
+const CodeBlock = ({ props }: Props) => {
+  const { code, language } = props?.value;
+  return (
+    <SyntaxHighlighter
+      showLineNumbers={true}
+      showInlineLineNumbers={true}
+      language={language}
+      style={atomOneDark}
+      customStyle={{
+        padding: "1em",
+        marginBottom: "2em",
+      }}
+      className="text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3"
+    >
+      {code}
+    </SyntaxHighlighter>
+  );
+};
 const RichTextComponent = {
   types: {
     image: (props: any) => {
@@ -40,14 +64,14 @@ const RichTextComponent = {
             <div className="absolute right-[12px] top-0 -translate-y-1/2">
               <CopyCode copyText={props.value.code} />
             </div>
-
-            <SyntaxHighlighter
+            <CodeBlock props={props} />
+            {/* <SyntaxHighlighter
               language={props.value.language}
               style={atomOneDark}
               className="text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3"
             >
               {props.value.code}
-            </SyntaxHighlighter>
+            </SyntaxHighlighter> */}
           </div>
         );
       }
