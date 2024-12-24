@@ -1,8 +1,10 @@
+"use client";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import atomOneDark from "react-syntax-highlighter/dist/esm/styles/hljs/atom-one-dark";
 import Link from "next/link";
 import urlFor from "@/libs/urlFor";
 import CopyCode from "../CopyCode";
+import React from "react";
 
 // const Table = ({ value }: { value: any }) => {
 //   return (
@@ -38,13 +40,23 @@ const RichTextComponent = {
             <div className="absolute right-[12px] top-0 -translate-y-1/2">
               <CopyCode copyText={props.value.code} />
             </div>
-            <SyntaxHighlighter
+            {React.createElement(
+              SyntaxHighlighter,
+              {
+                language: props.value.language,
+                style: atomOneDark,
+                className:
+                  "text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3",
+              },
+              props.value.code
+            )}
+            {/* <SyntaxHighlighter
               language={props.value.language}
               style={atomOneDark}
               className="text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3"
             >
               {props.value.code}
-            </SyntaxHighlighter>
+            </SyntaxHighlighter> */}
           </div>
         );
       }
