@@ -13,14 +13,14 @@ interface ListLayoutProps {
 }
 const ListLayout = ({ posts, pagination }: ListLayoutProps) => {
   return (
-    <section className="mt-[48px] max-w-[48rem] mx-auto">
+    <section className="mt-[48px] max-w-[48rem] mx-auto  px-[1rem]">
       <h3 className="text-[24px] font-semibold">Featured Posts</h3>
       <div className="mt-[1.5rem] grid grid-cols-1 gap-x-[30px] gap-y-[40px]">
         {posts.map((post, idx) => (
           <div key={idx} className="group col-span-1 w-full mx-auto   ">
             <Link
               href={`/blogs/${post.slug.current}`}
-              className=" block w-fit text-[18px] font-medium border-dashed border-b-[2px] border-transparent hover:border-primary text-primary"
+              className=" block w-fit text-[18px] font-medium text-primary hover:underline hover:decoration-dashed underline-offset-4"
               style={{
                 viewTransitionName: `demo-title-${post.slug.current}`,
               }}

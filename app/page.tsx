@@ -55,6 +55,7 @@ const HomePage = async () => {
       </section>
       <SkillList />
       <SectionNext articles={articlesNext} />
+
       {/* <SectionReact articles={articlesReact} /> */}
     </div>
   );

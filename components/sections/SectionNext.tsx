@@ -7,12 +7,12 @@ const SectionNext = ({ articles }: { articles: IArticle[] }) => {
   return (
     <section className="mt-[48px]">
       <h3 className="text-[24px] font-semibold">Featured Posts</h3>
-      <div className="mt-[1.5rem] grid grid-cols-1 gap-x-[30px] gap-y-[40px]">
+      <div className="mt-[1.5rem] grid grid-cols-1 gap-x-[30px] gap-y-[20px] md:gap-y-[40px]">
         {articles.map((article, idx) => (
           <div key={idx} className="group col-span-1 w-full mx-auto   ">
             <Link
               href={`/blogs/${article.slug.current}`}
-              className=" block w-fit text-[18px] font-medium border-dashed border-b-[2px] border-transparent hover:border-primary text-primary"
+              className=" block w-fit text-[18px] font-medium hover:underline-offset-4 hover:underline decoration-dashed text-primary"
               style={{
                 viewTransitionName: `demo-title-${article.slug.current}`,
               }}
@@ -35,7 +35,7 @@ const SectionNext = ({ articles }: { articles: IArticle[] }) => {
       <div className="">
         <Link
           href="/blogs"
-          className="group w-fit mx-auto mt-16 flex items-center hover:text-primary"
+          className="group w-fit mx-auto mt-10 md:mt-16 flex items-center hover:text-primary"
         >
           All Posts{" "}
           <IconArrowNarrowRight className="ml-[8px] group-hover:stroke-primary" />
