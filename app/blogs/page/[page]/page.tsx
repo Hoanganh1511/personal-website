@@ -1,4 +1,5 @@
 import { getArticlesByCategory } from "@/actions/get-posts";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import ListLayout from "@/components/layout/ListLayout";
 import React from "react";
 const POSTS_PER_PAGE = 3;
@@ -32,5 +33,10 @@ export default async function Page(props: {
   };
 
   if (!posts) return;
-  return <ListLayout posts={posts} pagination={pagination} />;
+  return (
+    <div className="mt-[48px] max-w-[48rem] mx-auto  px-[1rem]">
+      <Breadcrumbs />
+      <ListLayout posts={posts} pagination={pagination} />
+    </div>
+  );
 }

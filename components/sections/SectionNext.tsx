@@ -32,15 +32,13 @@ const SectionNext = ({ articles }: { articles: IArticle[] }) => {
           </div>
         ))}
       </div>
-      <div className="">
-        <Link
-          href="/blogs"
-          className="group w-fit mx-auto mt-10 md:mt-16 flex items-center hover:text-primary"
-        >
-          All Posts{" "}
-          <IconArrowNarrowRight className="ml-[8px] group-hover:stroke-primary" />
-        </Link>
-      </div>
+      <Link
+        href="/blogs"
+        className="group w-fit mx-auto mt-10 md:mt-16 flex items-center hover:text-primary"
+      >
+        All Posts{" "}
+        <IconArrowNarrowRight className="ml-[8px] group-hover:stroke-primary" />
+      </Link>
     </section>
   );
 };

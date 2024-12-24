@@ -1,6 +1,7 @@
 import Pagination from "@/app/blogs/_components/Pagination";
 import { IArticle } from "@/types/apiTypes";
 import { formatDateTime } from "@/utils/helper";
+import { IconCalendarWeekFilled } from "@tabler/icons-react";
 import { Link } from "next-view-transitions";
 import React from "react";
 export interface PaginationProps {
@@ -8,13 +9,14 @@ export interface PaginationProps {
   currentPage: number;
 }
 interface ListLayoutProps {
+  title?: string;
   posts: IArticle[];
   pagination?: PaginationProps;
 }
-const ListLayout = ({ posts, pagination }: ListLayoutProps) => {
+const ListLayout = ({ title, posts, pagination }: ListLayoutProps) => {
   return (
-    <section className="mt-[48px] max-w-[48rem] mx-auto  px-[1rem]">
-      <h3 className="text-[24px] font-semibold">Featured Posts</h3>
+    <section className="">
+      {title && <h3 className="text-[24px] font-semibold">{title}</h3>}
       <div className="mt-[1.5rem] grid grid-cols-1 gap-x-[30px] gap-y-[40px]">
         {posts.map((post, idx) => (
           <div key={idx} className="group col-span-1 w-full mx-auto   ">
@@ -27,9 +29,10 @@ const ListLayout = ({ posts, pagination }: ListLayoutProps) => {
             >
               {post.title}
             </Link>
-            <div className="mt-[4px]">
+            <div className="my-[6px]">
               <div className="flex items-center gap-x-[8px]">
-                <p className="text-[14px] ">
+                <IconCalendarWeekFilled className="size-[22px] fill-black-primary/80" />
+                <p className="italic text-[14px] leading-[1rem] ">
                   {formatDateTime(post._createdAt)}
                 </p>
               </div>
