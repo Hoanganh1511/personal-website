@@ -32,7 +32,7 @@ const BlogDetail = async ({
   const post = await getDetailPost(slug);
   return (
     <ScrollLinked>
-      <div className="max-w-[48rem] mx-auto relative">
+      <div className="max-w-[48rem] mx-auto relative px-[1rem]">
         <div className="pb-[48px]">
           <BackButton />
 
