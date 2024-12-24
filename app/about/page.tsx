@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 const page = () => {
   return (
     <div className="relative px-[1rem] py-[20px] pt-[40px]">

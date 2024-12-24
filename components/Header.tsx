@@ -72,12 +72,20 @@ const Header = () => {
         {isShowSearchDrawer && (
           <ul className="flex flex-col items-center gap-y-[0.5rem]">
             <li className="">
-              <Link href="/projects" className="block p-[0.75rem_1rem]">
+              <Link
+                onClick={toggleDrawer}
+                href="/projects"
+                className="block p-[0.75rem_1rem]"
+              >
                 Projects
               </Link>
             </li>
             <li className="">
-              <Link href="/about" className="block p-[0.75rem_1rem]">
+              <Link
+                onClick={toggleDrawer}
+                href="/about"
+                className="block p-[0.75rem_1rem]"
+              >
                 About
               </Link>
             </li>
