@@ -13,7 +13,6 @@ const CertificateSection = () => {
       .then((response) => response.json())
       .then((data) => {
         setRepos(data);
-        console.log(data);
       });
   };
 
