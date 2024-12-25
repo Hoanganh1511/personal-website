@@ -1,27 +1,56 @@
-import Image from "next/image";
 import Link from "next/link";
 import urlFor from "@/libs/urlFor";
-const Table = ({ value }: { value: any }) => {
-  return (
-    <table>
-      {value.rows.map((row: any, idx: number) => (
-        <TableRow key={idx} row={row} />
-      ))}
-    </table>
-  );
-};
-const TableRow = ({ row }: { row: any }) => {
-  return (
-    <tr>
-      {row.cells.map((cell: any, idx: number) => (
-        <td key={idx}>{cell}</td>
-      ))}
-    </tr>
-  );
-};
+import CopyCode from "../CopyCode";
+import React from "react";
+import CodeBlock from "../CodeBlock";
+
+// const Table = ({ value }: { value: any }) => {
+//   return (
+//     <table>
+//       {value.rows.map((row: any, idx: number) => (
+//         <TableRow key={idx} row={row} />
+//       ))}
+//     </table>
+//   );
+// };
+// const TableRow = ({ row }: { row: any }) => {
+//   return (
+//     <tr>
+//       {row.cells.map((cell: any, idx: number) => (
+//         <td key={idx}>{cell}</td>
+//       ))}
+//     </tr>
+//   );
+// };
+
 const RichTextComponent = {
   types: {
-    image: ({ value }: any) => <div></div>,
+    image: (props: any) => {
+      return (
+        <div className="mb-5">
+          <img src={urlFor(props.value)?.url()} alt="" className="w-full" />
+        </div>
+      );
+    },
+    code: (props: any) => {
+      if (props.value.hasOwnProperty("code")) {
+        return (
+          <div className="relative">
+            <div className="absolute right-[12px] top-0 -translate-y-1/2">
+              <CopyCode copyText={props.value.code} />
+            </div>
+            <CodeBlock props={props} />
+            {/* <SyntaxHighlighter
+              language={props.value.language}
+              style={atomOneDark}
+              className="text-[14px] !px-[1.2rem] !py-[1rem] rounded-md mb-3"
+            >
+              {props.value.code}
+            </SyntaxHighlighter> */}
+          </div>
+        );
+      }
+    },
     callToAction: ({ value, isInline }: any) =>
       isInline ? <a></a> : <div></div>,
   },

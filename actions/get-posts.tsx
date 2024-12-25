@@ -41,22 +41,24 @@ const getArticlesByCategory = async ({
           ...,
           author->,
           categories[]->,
-          "category": *[_type == 'category' && tag.current == $category][0]
+          "category": *[_type == 'category' && tag.current == $category]
         } | order(_createdAt desc)`;
   const querySanity = groq`*[_type=="post" && $category in categories[]->tag.current] {
           ...,
           author->,
           categories[]->,
-          "category": *[_type == 'category' && tag.current == $category][0]
+          "category": *[_type == 'category' && tag.current == $category]
         } | order(_createdAt desc) ${
           limit ? `[${offset}...${offset + limit}]` : ""
         }`;
   const allData = await client.fetch(queryAllBlogsWithCategorySanity, {
     category: category,
   });
+
   const data = await client.fetch(querySanity, {
     category: category,
   });
+
   if (!data.length) {
     return {
       data: [],
