@@ -17,6 +17,11 @@ import { Link } from "next-view-transitions";
 import { IconMenuDeep, IconMoon, IconSearch, IconX } from "@tabler/icons-react";
 const navs = [
   {
+    text: "Trang chủ",
+    href: "/",
+  },
+
+  {
     text: "Projects",
     href: "/projects",
   },
@@ -38,9 +43,12 @@ const Header = () => {
     <nav className="z-10 w-full backdrop-blur-2xl max-w-[48rem] mx-auto px-[1rem] ">
       <div className="border-b-[0.5px] border-primary/30">
         <div className="py-[16px] flex items-center justify-between">
-          <Link href="/" className="text-[34px] font-bold font-dancing-script">
-            Hoang Tuan Anh
-          </Link>
+          <div className="w-full flex flex-col items-center">
+            <p className="text-[32px] font-bold font-dancing-script">
+              Tuấn Anh&apos;s Corner
+            </p>
+            <p className="text-[16px] -font-dancing-script">Things about me</p>
+          </div>
           <div className="hidden lg:flex ml-10 items-center gap-x-3">
             {navs.map((nav, idx) => (
               <Link
@@ -55,7 +63,7 @@ const Header = () => {
               </Link>
             ))}
           </div>
-          <div className="md:hidden">
+          <div className="hidden">
             {isShowSearchDrawer ? (
               <IconX
                 className="size-[30px] stroke-black-primary"

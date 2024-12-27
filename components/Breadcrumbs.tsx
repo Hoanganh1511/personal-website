@@ -24,10 +24,10 @@ const Breadcrumbs = () => {
   return (
     <div>
       <div className="flex items-center">
-        <Link href="/" className="text-black-primary/80 hover:underline">
+        {/* <Link href="/" className="text-black-primary/80 hover:underline">
           Home
         </Link>
-        <IconChevronsRight className="mt-[2px] mx-1 size-[16px] stroke-black-primary/70" />
+        <IconChevronsRight className="mt-[2px] mx-1 size-[16px] stroke-black-primary/70" /> */}
 
         {lists.length > 0 &&
           lists.map((item, id) => {

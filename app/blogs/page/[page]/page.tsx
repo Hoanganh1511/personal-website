@@ -1,6 +1,8 @@
 import { getArticlesByCategory } from "@/actions/get-posts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ListLayout from "@/components/layout/ListLayout";
+import NextBreadcrumb from "@/components/NextBreadcrumb";
+import { IconChevronRight } from "@tabler/icons-react";
 import React from "react";
 const POSTS_PER_PAGE = 3;
 export const generateStaticParams = async () => {
@@ -34,7 +36,22 @@ export default async function Page(props: {
 
   if (!posts) return;
   return (
-    <div className="mt-[48px] max-w-[48rem] mx-auto  px-[1rem]">
+    <div className=" max-w-[48rem] mx-auto  px-[1rem]">
+      <section className="py-5">
+        <p className="text-center mb-2 font-bold">Bạn đang xem</p>
+        <NextBreadcrumb
+          homeElement={"Trang chủ"}
+          separator={
+            <span>
+              <IconChevronRight className="mt-[2px] size-[16px]" />
+            </span>
+          }
+          activeClasses=""
+          containerClasses="flex items-center justify-center bg-white"
+          listClasses=" mx-2 italic text-[14px] "
+          capitalizeLinks
+        />
+      </section>
       <Breadcrumbs />
       <ListLayout posts={posts} pagination={pagination} />
     </div>
