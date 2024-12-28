@@ -16,6 +16,7 @@ const nextConfig = {
       "i.ytimg.com",
       "cdn.tgdd.vn",
       "eduquiz.vn",
+      "images.squarespace-cdn.com",
     ],
   },
 };

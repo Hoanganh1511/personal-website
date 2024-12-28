@@ -35,7 +35,7 @@ export default function RootLayout({
           className={`${plex_mono.className} ${plex_mono.variable} ${dancing_script.variable} ${plex_sans.variable}`}
         >
           <Providers>
-            <div className="min-h-screen relative pb-[100px]">
+            <div className="min-h-dvh relative pb-[80px]">
               <Header />
 
               <MobileNavigation />

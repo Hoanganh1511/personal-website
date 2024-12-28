@@ -98,25 +98,8 @@ const page = () => {
               <p className="block mb-4 text-[14px] leading-[1.8rem]  font-plex-mono text-black-primary"></p>
             </li> */}
           </ul>
-          <div className="mb-8 flex items-center justify-center">
-            Social Links:{" "}
-            <div className="ml-2 inline-flex items-center gap-x-[8px]">
-              <Link href="https://github.com/Hoanganh1511" target={"_blank"}>
-                <FiGithub className="text-[22px] text-black-primary opacity-90" />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/hoanganh1511/"
-                target={"_blank"}
-              >
-                <AiOutlineLinkedin className="text-[26px] text-black-primary opacity-90" />
-              </Link>
-              <Link href="https://www.facebook.com/jm.1511/" target={"_blank"}>
-                <FaFacebookSquare className="text-[23px] text-black-primary opacity-90" />
-              </Link>
-            </div>
-          </div>
         </section>
-        <div className="mt-4 flex">
+        {/* <div className="mt-4 flex">
           <div className="flex-1 flex flex-col"></div>
         </div>
         <p className="mt-6 px-8 py-4 bg-gray-300/50 rounded-[12px] font-medium text-center">
@@ -154,39 +137,7 @@ const page = () => {
               </p>
             </div>
           </Section>
-          {/* <Section title="Bio">
-            <div className="">
-              <div className="flex gap-4 mb-1">
-                <div className="font-bold">2000</div>
-                <div className="font-light">Born in Lao Cai, Viet Nam</div>
-              </div>
-              <div className="flex gap-4 mb-1">
-                <div className="font-bold">2018</div>
-                <div className="font-light">
-                  Completed the University&apos;s Program in the University of
-                  Transport Technology
-                </div>
-              </div>
-              <div className="flex gap-4 mb-1">
-                <div className="font-bold">2021</div>
-                <div className="font-light">
-                  Start and Completed Internship Program at Bytesoft VietNam !
-                </div>
-              </div>
-              <div className="flex gap-4 mb-1">
-                <div className="font-bold">2023 - present</div>
-                <div className="font-light">Start work at VTC Intecom</div>
-              </div>
-            </div>
-          </Section>
-          <Section title="I ♥">
-            <div className="">
-              <div className="indent-3 font-light">
-                Art, Music, Vlog, Information Technology
-              </div>
-            </div>
-          </Section> */}
-        </div>
+        </div> */}
       </div>
     </div>
   );

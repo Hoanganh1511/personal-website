@@ -41,12 +41,15 @@ const Header = () => {
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   return (
     <nav className="z-10 w-full backdrop-blur-2xl max-w-[48rem] mx-auto px-[1rem] ">
-      <div className="border-b-[0.5px] border-primary/30">
+      <div className="border-b-[1px] border-black-primary/30">
         <div className="py-[16px] flex items-center justify-between">
-          <div className="w-full flex flex-col items-center">
-            <p className="text-[32px] font-bold font-dancing-script">
+          <div className="flex-1 flex flex-col items-center md:items-start">
+            <Link
+              href="/ "
+              className="text-[32px] font-bold font-dancing-script"
+            >
               Tuấn Anh&apos;s Corner
-            </p>
+            </Link>
             <p className="text-[16px] -font-dancing-script">Things about me</p>
           </div>
           <div className="hidden lg:flex ml-10 items-center gap-x-3">
@@ -56,7 +59,10 @@ const Header = () => {
                 prefetch={true}
                 href={nav.href}
                 className={`px-4 font-plex-mono font-medium hover:text-primary ${
-                  nav.href === pathname ? "decoration-wavy underline " : ""
+                  (pathname === "/" && nav.href === "/") ||
+                  (nav.href === pathname && pathname !== "/")
+                    ? "decoration-wavy underline "
+                    : ""
                 }`}
               >
                 {nav.text}

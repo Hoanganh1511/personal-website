@@ -95,14 +95,14 @@ export default async function Home() {
     <div className="py-[40px] max-w-[48rem] mx-auto px-[1rem]">
       <div className="flex gap-x-[60px]">
         <div className="w-full">
-          <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">
+          {/* <h3 className="title-separate my-[24px] flex items-center justify-center relative after:">
             <a
               href=""
               className="px-6 block bg-white text-[26px] text-[#3c3c3b] font-bold uppercase"
             >
               Next.js
             </a>
-          </h3>
+          </h3> */}
           <p className="mb-4">Hiện có {listProject.length} projects</p>
           <div className="flex flex-col gap-y-[8px]">
             {listProject.map((project, id) => {
@@ -113,7 +113,7 @@ export default async function Home() {
                   href={project.href || ""}
                   className="flex rounded-[5px] border-[1px] border-gray-600"
                 >
-                  <div className="relative w-[162px] h-[113px] bg-gray-200 border-r-[1px] border-gray-300 rounded-[5px] overflow-hidden">
+                  <div className="relative w-[30%] md:w-[162px] h-[113px] aspect-[162/113] bg-gray-200 border-r-[1px] border-gray-300 rounded-[5px] overflow-hidden">
                     <Image
                       src={project.image || ""}
                       fill
@@ -123,10 +123,10 @@ export default async function Home() {
                   </div>
                   <div className="group flex-1 flex flex-col items-end p-[10px]">
                     <div className="p-[10px] pr-0  w-full h-full group-hover:pr-[10px] duration-300 rounded-[6px]">
-                      <h4 className="text-[20px] text-right font-medium group-hover:text-primary">
+                      <h4 className="text-[15px] md:text-[20px] text-right font-medium group-hover:text-primary line-clam-2">
                         {project.name}
                       </h4>
-                      <p className="text-right line-clamp-2">
+                      <p className="text-right line-clamp-1">
                         {project.description}
                       </p>
                     </div>
