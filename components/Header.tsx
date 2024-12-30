@@ -12,7 +12,6 @@ import { categoryData } from "@/data";
 
 import { FiSearch } from "react-icons/fi";
 import { MdArticle } from "react-icons/md";
-import { IoCodeWorkingSharp } from "react-icons/io5";
 import { Link } from "next-view-transitions";
 import { IconMenuDeep, IconMoon, IconSearch, IconX } from "@tabler/icons-react";
 const navs = [
@@ -20,15 +19,17 @@ const navs = [
     text: "Trang chủ",
     href: "/",
   },
-
-  {
-    text: "Projects",
-    href: "/projects",
-  },
-
   {
     text: "About",
     href: "/about",
+  },
+  {
+    text: "Blogs",
+    href: "/blogs",
+  },
+  {
+    text: "Projects",
+    href: "/projects",
   },
 ];
 const Header = () => {
@@ -40,8 +41,8 @@ const Header = () => {
   );
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   return (
-    <nav className="z-10 w-full backdrop-blur-2xl max-w-[48rem] mx-auto px-[1rem] ">
-      <div className="border-b-[1px] border-black-primary/30">
+    <nav className="z-10 w-full backdrop-blur-2xl max-w-[48rem] xl:max-w-[1400px] mx-auto px-[1rem] ">
+      <div className="border-b-[1px] border-black-primary/30 md:border-transparent">
         <div className="py-[16px] flex items-center justify-between">
           <div className="flex-1 flex flex-col items-center md:items-start">
             <Link
@@ -58,10 +59,10 @@ const Header = () => {
                 key={idx}
                 prefetch={true}
                 href={nav.href}
-                className={`px-4 font-plex-mono font-medium hover:text-primary ${
+                className={`px-4 xl:text-[18px] font-plex-mono font-medium hover:text-primary ${
                   (pathname === "/" && nav.href === "/") ||
                   (nav.href === pathname && pathname !== "/")
-                    ? "decoration-wavy underline "
+                    ? "text-primary  "
                     : ""
                 }`}
               >
