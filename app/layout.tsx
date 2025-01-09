@@ -13,6 +13,9 @@ import MobileNavigation from "@/components/MobileNavigation";
 import NextBreadcrumb from "@/components/NextBreadcrumb";
 import { IconChevronRight } from "@tabler/icons-react";
 import Socials from "@/components/Socials";
+
+import WrapAnimate from "@/components/layout/WrapAnimate";
+
 const plex_sans = IBM_Plex_Sans({
   subsets: ["latin"],
   variable: "--font-plex-sans",
@@ -41,22 +44,22 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
-        <body
-          className={`${montserrat.className} ${plex_mono.variable} ${dancing_script.variable} ${plex_sans.variable}`}
-        >
-          <Providers>
-            <div className="min-h-dvh relative pb-[80px]">
+      <Providers>
+        <html lang="en">
+          <body
+            className={`${montserrat.className} ${plex_mono.variable} ${dancing_script.variable} ${plex_sans.variable}
+              
+              `}
+          >
+            <div className="min-h-dvh relative pb-[80px] dark:bg-black">
               <Header />
-
               <MobileNavigation />
-              {children}
-              <Socials />
-              {/* <Footer /> */}
+              <WrapAnimate>{children}</WrapAnimate>
+              {/* <Socials /> */}
             </div>
-          </Providers>
-        </body>
-      </html>
+          </body>
+        </html>
+      </Providers>
     </ViewTransitions>
   );
 }
