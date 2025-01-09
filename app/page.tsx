@@ -41,7 +41,8 @@ const HomePage = async () => {
               alt=""
               width={500}
               height={500}
-              className="scale-[1.1]"
+              priority
+              className="scale-[1.1] xl:w-[700px] xl:h-auto aspect-[640/450]"
               src="https://images.squarespace-cdn.com/content/v1/5366c52ee4b0c7352c8a8139/1591923664361-W8TH3U1WXJ8T2NGHI9OG/Longbeach+House_Dunedin.jpg?format=1000w"
             />
           </div>
