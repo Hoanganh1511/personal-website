@@ -42,16 +42,13 @@ const Header = () => {
   const toggleDrawer = () => dispatch(setShowSearchDrawer(!isShowSearchDrawer));
   return (
     <nav className="z-10 w-full backdrop-blur-2xl max-w-[48rem] xl:max-w-[1400px] mx-auto px-[1rem] ">
-      <div className="border-b-[1px] border-black-primary/30 md:border-transparent">
-        <div className="py-[16px] flex items-center justify-between">
+      <div className=" rounded-b-[28px]">
+        <div className="py-[26px] flex items-center justify-between">
           <div className="flex-1 flex flex-col items-center md:items-start">
-            <Link
-              href="/ "
-              className="text-[32px] font-bold font-dancing-script"
-            >
+            <Link href="/ " className="text-[32px]  font-bold">
               Tuấn Anh&apos;s Corner
             </Link>
-            <p className="text-[16px] -font-dancing-script">Things about me</p>
+            {/* <p className="text-[18px]  font-dancing-script">Things about me</p> */}
           </div>
           <div className="hidden lg:flex ml-10 items-center gap-x-3">
             {navs.map((nav, idx) => (
@@ -59,10 +56,10 @@ const Header = () => {
                 key={idx}
                 prefetch={true}
                 href={nav.href}
-                className={`px-4 xl:text-[18px] font-plex-mono font-medium hover:text-primary ${
+                className={`px-4 xl:text-[18px] font-mali font-medium hover:text-primary ${
                   (pathname === "/" && nav.href === "/") ||
                   (nav.href === pathname && pathname !== "/")
-                    ? "text-primary  "
+                    ? "  "
                     : ""
                 }`}
               >

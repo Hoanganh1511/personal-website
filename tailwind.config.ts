@@ -49,6 +49,7 @@ const config: Config = {
         "plex-sans": ["var(--font-plex-sans)"],
         "plex-mono": ["var(--font-plex-mono)"],
         "dancing-script": ["var(--font-dancing-script)"],
+        mali: "var(--font-mali)",
         poppins: ["var(--font-poppins)"],
         "poppins-medium": ["var(--font-poppins-medium)"],
         "poppins-bold": ["var(--font-poppins-bold)"],

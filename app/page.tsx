@@ -11,6 +11,7 @@ import SkillList from "@/components/sections/SkillList";
 import { Metadata } from "next";
 import NextBreadcrumb from "@/components/NextBreadcrumb";
 import { IconChevronRight } from "@tabler/icons-react";
+import { BsStars } from "react-icons/bs";
 export const metadata: Metadata = {
   title: "My corner - Hoàng Tuấn Anh",
   description: "My corner - Become Fullstack Developer",
@@ -35,18 +36,82 @@ const HomePage = async () => {
         {/* <SkillList /> */}
         {/* <SectionNext articles={articlesNext} /> */}
         {/* <SectionReact articles={articlesReact} /> */}
-        <section className="overflow-hidden">
-          <div className="relative w-full h-auto flex justify-center items-center">
-            <Image
-              alt=""
-              width={500}
-              height={500}
-              priority
-              className="scale-[1.1] xl:w-[700px] xl:h-auto aspect-[640/450]"
-              src="https://images.squarespace-cdn.com/content/v1/5366c52ee4b0c7352c8a8139/1591923664361-W8TH3U1WXJ8T2NGHI9OG/Longbeach+House_Dunedin.jpg?format=1000w"
-            />
+        <section className="">
+          <div className="flex">
+            <div className="w-fit relative rounded-[20px] shadow-2xl">
+              <Image
+                alt=""
+                width={3260}
+                height={4898}
+                priority
+                className=" xl:w-[500px] xl:h-auto aspect-[3260/4898] rounded-[20px] "
+                src="/images/peach-tree-blossom-tokyo.jpg"
+              />
+            </div>
+            {/* <BsStars /> */}
+
+            <div className="flex-1 pl-12">
+              <div className="">
+                <h1 className="text-[36px] font-bold">Hoàng Tuấn Anh</h1>
+                <p>Web Developer</p>
+                <hr className="mt-3 border-black" />
+              </div>
+              <div className="mt-8">
+                <h2 className="flex items-center text-[20px] font-semibold">
+                  Work <BsStars className="ml-2" />
+                </h2>
+                <p className="indent-4 mt-2">
+                  Takuya is a freelance and a full-stack developer based in
+                  Osaka with a passion for building digital services/stuff he
+                  wants. He has a knack for all things launching products, from
+                  planning and designing all the way to solving real-life
+                  problems with code. When not online, he loves hanging out with
+                  his camera. Currently, he is living off of his own product
+                  called Inkdrop. He publishes content for marketing his
+                  products and his YouTube channel called &quot;Dev as
+                  Life&quot; has more than 100k subscribers.
+                </p>
+                <hr className="mt-3 border-black" />
+              </div>
+              {/*  */}
+              <div className="mt-8">
+                <h2 className="flex items-center text-[20px] font-semibold">
+                  Bio <BsStars className="ml-2" />
+                </h2>
+                <p className="indent-4 mt-2">
+                  Takuya is a freelance and a full-stack developer based in
+                  Osaka with a passion for building digital services/stuff he
+                  wants. He has a knack for all things launching products, from
+                  planning and designing all the way to solving real-life
+                  problems with code. When not online, he loves hanging out with
+                  his camera. Currently, he is living off of his own product
+                  called Inkdrop. He publishes content for marketing his
+                  products and his YouTube channel called &quot;Dev as
+                  Life&quot; has more than 100k subscribers.
+                </p>
+                <hr className="mt-3 border-black" />
+              </div>
+              {/*  */}
+              <div className="mt-8">
+                <h2 className="flex items-center text-[20px] font-semibold">
+                  I ♥ <BsStars className="ml-2" />
+                </h2>
+                <p className="indent-4 mt-2">
+                  Takuya is a freelance and a full-stack developer based in
+                  Osaka with a passion for building digital services/stuff he
+                  wants. He has a knack for all things launching products, from
+                  planning and designing all the way to solving real-life
+                  problems with code. When not online, he loves hanging out with
+                  his camera. Currently, he is living off of his own product
+                  called Inkdrop. He publishes content for marketing his
+                  products and his YouTube channel called &quot;Dev as
+                  Life&quot; has more than 100k subscribers.
+                </p>
+                <hr className="mt-3 border-black" />
+              </div>
+            </div>
           </div>
-          <div className="w-fit relative mt-[125px] ml-[20%] flex items-end">
+          {/* <div className="w-fit relative mt-[125px] ml-[20%] flex items-end">
             <Image
               src="/images/avatar-pencil.jpg"
               alt=""
@@ -61,26 +126,8 @@ const HomePage = async () => {
               </p>
               <Image src="/images/frame-chat-2.webp" alt="" fill className="" />
             </div>
-            <div className="ml-4 flex items-center justify-center">
-              <div className="mb-1 inline-flex items-center gap-x-[12px]">
-                <Link href="https://github.com/Hoanganh1511" target={"_blank"}>
-                  <FiGithub className="text-[22px] text-black-primary opacity-90" />
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/hoanganh1511/"
-                  target={"_blank"}
-                >
-                  <AiOutlineLinkedin className="text-[26px] text-black-primary opacity-90" />
-                </Link>
-                <Link
-                  href="https://www.facebook.com/jm.1511/"
-                  target={"_blank"}
-                >
-                  <FaFacebookSquare className="text-[23px] text-black-primary opacity-90" />
-                </Link>
-              </div>
-            </div>
-          </div>
+            <div className="ml-4 flex items-center justify-center"></div>
+          </div> */}
         </section>
       </div>
     </>
